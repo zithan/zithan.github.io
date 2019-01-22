@@ -115,6 +115,28 @@ sudo make install
   </div>
 </article>
 
+  
+
+	<section id="comment" class="comment">
+		<div id="gitment"></div>
+	</section>
+	<link rel="stylesheet" href="https://imsun.github.io/gitment/style/default.css">
+	<script src="https://imsun.github.io/gitment/dist/gitment.browser.js"></script>
+	<script>
+		var gitment = new Gitment({
+			owner: 'zithan',
+			repo: 'zithan.github.io',
+			oauth: {
+				client_id: '8323c5a6047381283888',
+				client_secret: 'fb25a6fc06e3962ffb16b9895bdbfdab4cc6d085',
+			},
+		})
+		gitment.render('gitment')
+	</script>
+
+
+
+
 
     </main>
 
