@@ -1,0 +1,150 @@
+<!DOCTYPE HTML>
+<html>
+<head><meta name="generator" content="Hexo 3.8.0">
+  <meta charset="utf-8">
+  
+  <title>Vagrant使用教程 | Zithan | for (;;) {学习, 总结, 提炼, 分享}</title>
+
+  
+  <meta name="author" content="Zithan">
+  
+
+  
+  <meta name="description" content="创建、初始化、启动box
+vagrant box 下载
+vagrant box add zithan centos.box
+mkdir zithanPjt &amp;amp;&amp;amp; cd zithanPjt
+vagrant init zithan
+vagrant up &amp;amp;&amp;amp; vagran">
+  
+
+  
+  
+  <meta name="keywords" content="">
+  
+
+  <meta id="viewport" name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, minimum-scale=1, user-scalable=no, minimal-ui">
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-status-bar-style" content="black">
+
+  <meta property="og:title" content="Vagrant使用教程">
+
+  <meta property="og:site_name" content="Zithan">
+
+  
+  <meta property="og:image" content="/favicon.ico">
+  
+
+  <link href="/favicon.ico" rel="icon">
+  <link rel="alternate" href="/atom.xml" title="Zithan" type="application/atom+xml">
+  <link rel="stylesheet" href="/css/style.css" media="screen" type="text/css">
+</head>
+
+
+<body>
+<div class="blog">
+  <div class="content">
+
+    <header>
+  <div class="site-branding">
+    <h1 class="site-title">
+      <a href="/">Zithan</a>
+    </h1>
+    <p class="site-description">for (;;) {学习, 总结, 提炼, 分享}</p>
+  </div>
+  <nav class="site-navigation">
+    <ul>
+      
+        <li><a href="/">主页</a></li>
+      
+        <li><a href="/archives">归档</a></li>
+      
+    </ul>
+  </nav>
+</header>
+
+    <main class="site-main posts-loop">
+    <article>
+
+  
+    
+    <h3 class="article-title"><span>Vagrant使用教程</span></h3>
+    
+  
+
+  <div class="article-top-meta">
+    <span class="posted-on">
+      <a href="/2017/10/20/2017-10-20-vagrant-config/" rel="bookmark">
+        <time class="entry-date published" datetime="2017-10-20T08:04:30.000Z">
+          2017-10-20
+        </time>
+      </a>
+    </span>
+  </div>
+
+
+  
+
+  <div class="article-content">
+    <div class="entry">
+      
+        <h3 id="创建、初始化、启动box"><a href="#创建、初始化、启动box" class="headerlink" title="创建、初始化、启动box"></a>创建、初始化、启动box</h3><ul>
+<li>vagrant box 下载</li>
+<li>vagrant box add zithan centos.box</li>
+<li>mkdir zithanPjt &amp;&amp; cd zithanPjt</li>
+<li>vagrant init zithan</li>
+<li>vagrant up &amp;&amp; vagrant ssh</li>
+</ul>
+<h3 id="vagrant高级配置"><a href="#vagrant高级配置" class="headerlink" title="vagrant高级配置"></a>vagrant高级配置</h3><ul>
+<li><p>端口转发配置</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">config.vm.network &quot;forwarded_port&quot;, guest: 80, host: 8888</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>网络设置配置</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">config.vm.network &quot;private_network&quot;, ip: &quot;192.168.199.101&quot;</span><br><span class="line"># 也可以配置public_network;同个局域网下可以访问</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>共享目录配置</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">config.vm.synced_folder &quot;/Users/vincent/code/&quot;, &quot;/home/www&quot;</span><br></pre></td></tr></table></figure>
+</li>
+</ul>
+<h3 id="优化"><a href="#优化" class="headerlink" title="优化"></a>优化</h3><ul>
+<li>虚拟机名称<br>vb.name = “ubuntu_mooc”</li>
+<li>虚拟机主机名<br>config.vm.hostname = “mooc”</li>
+<li>配置虚拟机内存和CPU<br>vb.memory = “1024”<br>vb.cpus = 2</li>
+</ul>
+
+      
+    </div>
+
+  </div>
+
+  <div class="article-footer">
+    <div class="article-meta pull-left">
+
+    
+
+    
+
+    </div>
+
+    
+  </div>
+</article>
+
+
+    </main>
+
+    <footer class="site-footer">
+  <p class="site-info">
+    Proudly powered by <a href="https://hexo.io/" target="_blank">Hexo</a> and
+    Theme by <a href="https://github.com/CodeDaraW/Hacker" target="_blank">Hacker</a>
+    <br>
+    
+    &copy; 2019 Zithan
+    
+  </p>
+</footer>
+    
+  </div>
+</div>
+</body>
+</html>

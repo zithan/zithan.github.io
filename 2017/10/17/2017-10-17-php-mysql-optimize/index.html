@@ -1,0 +1,191 @@
+<!DOCTYPE HTML>
+<html>
+<head><meta name="generator" content="Hexo 3.8.0">
+  <meta charset="utf-8">
+  
+  <title>mysql查询优化 | Zithan | for (;;) {学习, 总结, 提炼, 分享}</title>
+
+  
+  <meta name="author" content="Zithan">
+  
+
+  
+  <meta name="description" content="分析查询速度慢的原因
+记录慢查询日志
+
+分析查询日志时，不建议直接打开查询日志进行分析，比较浪费时间和精力，可以使用pt-query-digest工具进行分析
+
+
+show profile
+
+set profiling = 1；开启，服务器上执行的所有语句会检测消耗的时间，存到临时表中;show p">
+  
+
+  
+  
+  <meta name="keywords" content="">
+  
+
+  <meta id="viewport" name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, minimum-scale=1, user-scalable=no, minimal-ui">
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-status-bar-style" content="black">
+
+  <meta property="og:title" content="mysql查询优化">
+
+  <meta property="og:site_name" content="Zithan">
+
+  
+  <meta property="og:image" content="/favicon.ico">
+  
+
+  <link href="/favicon.ico" rel="icon">
+  <link rel="alternate" href="/atom.xml" title="Zithan" type="application/atom+xml">
+  <link rel="stylesheet" href="/css/style.css" media="screen" type="text/css">
+</head>
+
+
+<body>
+<div class="blog">
+  <div class="content">
+
+    <header>
+  <div class="site-branding">
+    <h1 class="site-title">
+      <a href="/">Zithan</a>
+    </h1>
+    <p class="site-description">for (;;) {学习, 总结, 提炼, 分享}</p>
+  </div>
+  <nav class="site-navigation">
+    <ul>
+      
+        <li><a href="/">主页</a></li>
+      
+        <li><a href="/archives">归档</a></li>
+      
+    </ul>
+  </nav>
+</header>
+
+    <main class="site-main posts-loop">
+    <article>
+
+  
+    
+    <h3 class="article-title"><span>mysql查询优化</span></h3>
+    
+  
+
+  <div class="article-top-meta">
+    <span class="posted-on">
+      <a href="/2017/10/17/2017-10-17-php-mysql-optimize/" rel="bookmark">
+        <time class="entry-date published" datetime="2017-10-17T04:13:57.000Z">
+          2017-10-17
+        </time>
+      </a>
+    </span>
+  </div>
+
+
+  
+
+  <div class="article-content">
+    <div class="entry">
+      
+        <h3 id="分析查询速度慢的原因"><a href="#分析查询速度慢的原因" class="headerlink" title="分析查询速度慢的原因"></a>分析查询速度慢的原因</h3><ul>
+<li><p>记录慢查询日志</p>
+<blockquote>
+<p>分析查询日志时，不建议直接打开查询日志进行分析，比较浪费时间和精力，可以使用pt-query-digest工具进行分析</p>
+</blockquote>
+</li>
+<li><p>show profile</p>
+<blockquote>
+<p>set profiling = 1；开启，服务器上执行的所有语句会检测消耗的时间，存到临时表中;<br>show profiles,<br>show prfiles for query 临时表ID。</p>
+</blockquote>
+</li>
+<li><p>show status</p>
+<blockquote>
+<p>show status会返回一些计数器，show global status查看服务器级别的所有计数<br>有时根据这些计数，可以猜测出哪些操作代价较高或者消耗时间多</p>
+</blockquote>
+</li>
+<li><p>show processlist;</p>
+</li>
+<li><p>explain别名：desc</p>
+<blockquote>
+<p>分析单条sql语句</p>
+</blockquote>
+</li>
+</ul>
+<h3 id="优化查询过程中的数据访问"><a href="#优化查询过程中的数据访问" class="headerlink" title="优化查询过程中的数据访问"></a>优化查询过程中的数据访问</h3><ul>
+<li>访问数据太多导致查询性能下降</li>
+<li>确定应用程序是否在检索大量超过需要的数据，太多行？太多列？</li>
+<li>确认mysql服务器是否在分析大量不必要的数据行</li>
+<li>避免使用如下sql语句<br>1.查询不需要的记录，使用Limit解决<br>2.多表关联查询返回全部列，指定a.id,a.name…<br>3.总是去除全部类,select * 会让优化器无法完成索引覆盖扫描的优化</li>
+<li>重复查询相同的数据，采用缓存</li>
+<li>是否在扫描额外的几率<br>1.使用explain来进行分析，如果发现查询需要扫描大量的数据但只是返回少数的行，可以通过如下技巧优化：使用索引覆盖扫描，把所有用的列都放在索引中，这样存储引擎就不需要会表获取对应行就可以返回结果</li>
+<li>改变数据库和表的结构，修改数据表的范式，eg:降低范式，空时间换取时间</li>
+<li>重写SQL语句，让优化器以更优的方式执行查询</li>
+</ul>
+<h3 id="优化长难得查询语句"><a href="#优化长难得查询语句" class="headerlink" title="优化长难得查询语句"></a>优化长难得查询语句</h3><ul>
+<li><p>一个复杂查询还是多个简单查询</p>
+<blockquote>
+<p>1.MySQL内部每秒能扫描内存中上百万行数据，相比之下，响应数据给客户端就要慢得多；<br>2.使用尽可能少的查询是好的，但是有时将一个大的查询分解为多个小的查询是很有必要的</p>
+</blockquote>
+</li>
+<li><p>切分查询<br>将一个大的查询分解为多个小的相同查询，如大量删除数据时，防止表锁住；</p>
+</li>
+</ul>
+<p>-分解关联查询<br>可以将一条关联语句分解成多条SQL来执行，让缓存效率更高，执行单个查询可以减少锁的竞争，在应用层做关联可以更容易对数据库进行拆分。查询效率大幅度提升，较少冗余将记录的查询</p>
+<h3 id="优化特定类型的查询语句"><a href="#优化特定类型的查询语句" class="headerlink" title="优化特定类型的查询语句"></a>优化特定类型的查询语句</h3><ul>
+<li><p>优化count()查询<br>count(*)会忽略所有的列，直接统计所有列数，因此不要使用count(列名)<br>myisam中，没有任何where条件下count(*)非常快<br>当有where条件是，myisam的count就不一定比其他引擎快<br>可以使用explain查询近似值，用近似值代替count(*)<br>增加汇总表<br>使用缓存</p>
+</li>
+<li><p>优化关联查询<br>确定on或者using子句的列上有索引<br>确保group by和order by 中只有一个表中的列，这样MySQL才有可能使用索引</p>
+</li>
+<li><p>优化子查询–嵌套查询<br>尽可能使用关联查询取代</p>
+</li>
+<li><p>优化group by和distinct<br>这两种查询均可使用索引来优化，是最有效的优化方法<br>关联查询中，使用标识列进行分组的效率会更高<br>如果不需要order by，进行group by时使用order by null,MySQL就不在进行文件排序<br>with rollup 超级聚合，可以把操作挪到应用程序处理</p>
+</li>
+<li><p>优化limit分页<br>limit 偏移量大的时候，查询效率较低<br>可以记录上次查询的最大ID，下次查询是直接根据该ID来查询<br>如：select id from table limit 0,100 where id &gt; 100;</p>
+</li>
+<li><p>优化union查询<br>union all的效率高于union，可以使用union all查询出数据，在通过应用程序进行过滤。</p>
+</li>
+</ul>
+<blockquote>
+<p>先定位低效的SQL语句，然后根据SQL语句可能低效的原因排查，先从索引着手，如果索引没有问题，考虑以下几个方面，数据访问的问题，长难查询句的问题还是一些特定类型优化的问题。</p>
+</blockquote>
+
+      
+    </div>
+
+  </div>
+
+  <div class="article-footer">
+    <div class="article-meta pull-left">
+
+    
+
+    
+
+    </div>
+
+    
+  </div>
+</article>
+
+
+    </main>
+
+    <footer class="site-footer">
+  <p class="site-info">
+    Proudly powered by <a href="https://hexo.io/" target="_blank">Hexo</a> and
+    Theme by <a href="https://github.com/CodeDaraW/Hacker" target="_blank">Hacker</a>
+    <br>
+    
+    &copy; 2019 Zithan
+    
+  </p>
+</footer>
+    
+  </div>
+</div>
+</body>
+</html>

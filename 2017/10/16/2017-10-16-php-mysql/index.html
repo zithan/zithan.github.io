@@ -1,0 +1,201 @@
+<!DOCTYPE HTML>
+<html>
+<head><meta name="generator" content="Hexo 3.8.0">
+  <meta charset="utf-8">
+  
+  <title>php-mysql | Zithan | for (;;) {学习, 总结, 提炼, 分享}</title>
+
+  
+  <meta name="author" content="Zithan">
+  
+
+  
+  <meta name="description" content="mysql数据类型
+整数类型
+
+TINYINT, SMALLINT, MEDIUMINT, INT, BIGINT属性：UNSIGNED（非负）长度：INT(11)：不会限制取值范围，只是限制显示范围零填充：zerofill
+
+
+实数类型
+
+1.FLOAT, DOUBLE, DECIMAL2.DEC">
+  
+
+  
+  
+  <meta name="keywords" content="">
+  
+
+  <meta id="viewport" name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, minimum-scale=1, user-scalable=no, minimal-ui">
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-status-bar-style" content="black">
+
+  <meta property="og:title" content="php-mysql">
+
+  <meta property="og:site_name" content="Zithan">
+
+  
+  <meta property="og:image" content="/favicon.ico">
+  
+
+  <link href="/favicon.ico" rel="icon">
+  <link rel="alternate" href="/atom.xml" title="Zithan" type="application/atom+xml">
+  <link rel="stylesheet" href="/css/style.css" media="screen" type="text/css">
+</head>
+
+
+<body>
+<div class="blog">
+  <div class="content">
+
+    <header>
+  <div class="site-branding">
+    <h1 class="site-title">
+      <a href="/">Zithan</a>
+    </h1>
+    <p class="site-description">for (;;) {学习, 总结, 提炼, 分享}</p>
+  </div>
+  <nav class="site-navigation">
+    <ul>
+      
+        <li><a href="/">主页</a></li>
+      
+        <li><a href="/archives">归档</a></li>
+      
+    </ul>
+  </nav>
+</header>
+
+    <main class="site-main posts-loop">
+    <article>
+
+  
+    
+    <h3 class="article-title"><span>php-mysql</span></h3>
+    
+  
+
+  <div class="article-top-meta">
+    <span class="posted-on">
+      <a href="/2017/10/16/2017-10-16-php-mysql/" rel="bookmark">
+        <time class="entry-date published" datetime="2017-10-16T03:10:50.000Z">
+          2017-10-16
+        </time>
+      </a>
+    </span>
+  </div>
+
+
+  
+
+  <div class="article-content">
+    <div class="entry">
+      
+        <h3 id="mysql数据类型"><a href="#mysql数据类型" class="headerlink" title="mysql数据类型"></a>mysql数据类型</h3><ul>
+<li><p>整数类型</p>
+<blockquote>
+<p>TINYINT, SMALLINT, MEDIUMINT, INT, BIGINT<br>属性：UNSIGNED（非负）<br>长度：INT(11)：不会限制取值范围，只是限制显示范围<br>零填充：zerofill</p>
+</blockquote>
+</li>
+<li><p>实数类型</p>
+<blockquote>
+<p>1.FLOAT, DOUBLE, DECIMAL<br>2.DECIMAL储蓄比BIGINT大的整数，可以用于存储精确的小数<br>3.FLOAT和DOUBLE类型支持使用标准的浮点进行近似计算，效率更高，而DECIMAL略似当做字符串处理，所以存储更大</p>
+</blockquote>
+</li>
+<li><p>字符串</p>
+<blockquote>
+<p>1.VARCHAR, CHAR, TEXT, BLOB<br>2.VARCHAR使用1或2个额外字节记录字符串的长度，列长度小于255字节，使用1个字节表示，否则用2个<br>3.超出varchar指定长度，会截断，char也一样<br>4.char会使用空格进行填充以方便比较，而varchar会缩小到字符串长度<br>5.对于经常变更的数据，char比varchar更好，char不容易产生碎片<br>6.对于非常短的列，char比varchar在存储空间上更有效率<br>7.尽量避免使用BLOB/TEXT，查询会使用临时表，会导致严重的性能开销</p>
+</blockquote>
+</li>
+<li><p>枚举<br>1.有时可以使用枚举代替常用的字符串类型<br>2.把不重复的集合存储成一个预定义的集合<br>3.非常紧凑，把列表值压缩到一个或两个字节<br>4.内部存储是整数<br>5.尽量避免使用数字作为ENUM枚举的常量，易混乱<br>6.排序是按照内部存储的整数进行排序<br>7.枚举会使表大小大大减小，因为存储整数类型</p>
+</li>
+<li><p>日期和时间类型<br>1.尽量使用TIMESTAMP，比datetime空间效率高<br>2.用整数保存时间戳的格式不方便处理<br>3.用bigint存储微秒</p>
+</li>
+<li><p>列属性<br>auto_increment, default, not null, zerofill</p>
+</li>
+</ul>
+<hr>
+<h3 id="mysql基础操作"><a href="#mysql基础操作" class="headerlink" title="mysql基础操作"></a>mysql基础操作</h3><ul>
+<li>常用操作<br>1.MySQL的连接和关闭：mysql -u -p -h -P<br>2.其他：\G, \c, \q, \s, \h, \d</li>
+</ul>
+<hr>
+<h3 id="mysql存储引擎"><a href="#mysql存储引擎" class="headerlink" title="mysql存储引擎"></a>mysql存储引擎</h3><ul>
+<li><p>InnoDB</p>
+<blockquote>
+<p>1.默认事务型引擎<br>2.数据存储在共享表空间，可以通过配置分开<br>3.对主键查询高于其他类型<br>4.内部做了很多优化，从磁盘读取数据时会自动在内存构建hash索引，插入数据是自动构建插入缓冲区<br>5.通过一些机制和工具支持真正的热备份<br>6.支持崩溃后的安全恢复<br>7.支持行级锁<br>8.支持外键</p>
+</blockquote>
+</li>
+<li><p>MyISAM</p>
+<blockquote>
+<p>1.mysql5.1之前,myisam是默认<br>2.拥有全文索引、压缩、空间函数<br>3.不支持事务和行级锁，不支持崩溃后的安全恢复<br>4.表存储在两个文件，MYD和MYI<br>5.设计简单，某些场景下性能很好，eg.<code>count(*)</code></p>
+</blockquote>
+</li>
+<li><p>其他表引擎</p>
+<blockquote>
+<p>archive， BlackHole， CSV， memory</p>
+</blockquote>
+</li>
+</ul>
+<hr>
+<h3 id="mysql锁机制"><a href="#mysql锁机制" class="headerlink" title="mysql锁机制"></a>mysql锁机制</h3><ul>
+<li>定义：当多个查询同时进行数据修改的时候，就会产生并发控制的问题，锁就是解决问题。</li>
+<li>共享锁和排它锁，即系读锁和写锁</li>
+<li>读锁：共享的，不堵塞，多个用户可以同时读同一个资源，互不干扰</li>
+<li>写锁：排他的，一个写锁会阻塞其他的写锁和读锁</li>
+<li>锁粒度：<br>1.表锁，系统性能开销小，会锁定整张表，MyISAM是表锁<br>2.行锁，最大程度的支持并发处理，开销大，InnoDB是行锁</li>
+</ul>
+<h3 id="mysql事务处理"><a href="#mysql事务处理" class="headerlink" title="mysql事务处理"></a>mysql事务处理</h3><ul>
+<li>InnoDB支持事务处理</li>
+<li>服务器层不管理事务，由下层存储引擎实现，所以在同个事务中，不可使用多种存储引擎</li>
+<li>在不支持事务表上执行事务操作，不提醒不报错，无效果</li>
+</ul>
+<h3 id="存储过程"><a href="#存储过程" class="headerlink" title="存储过程"></a>存储过程</h3><ul>
+<li>通过把处理封装在容易使用的单元中，简化复杂的操作，保证数据一致性</li>
+<li>存储过程就是处理有业务逻辑和流程的mysql语句集合</li>
+<li>简化多变动的管理</li>
+</ul>
+<h3 id="触发器"><a href="#触发器" class="headerlink" title="触发器"></a>触发器</h3><ul>
+<li>提供给程序员和数据分析员来保证数据完整性的一种方法，他是与表事件相关的特殊的<strong>存储过程</strong></li>
+<li>使用场景<blockquote>
+<p>1.可通过数据库中的相关表实现级联更改<br>2.实时监控某张表的某个字段的更改而需要做出的相应处理<br>3.某些业务编号的生成等<br>4.滥用会造成数据库及应用程序维护的困难</p>
+</blockquote>
+</li>
+</ul>
+<h3 id="char与varchar区别"><a href="#char与varchar区别" class="headerlink" title="char与varchar区别"></a>char与varchar区别</h3><h3 id="MyISAM与InnoDB区别"><a href="#MyISAM与InnoDB区别" class="headerlink" title="MyISAM与InnoDB区别"></a>MyISAM与InnoDB区别</h3><p>1.锁<br>2.事务<br>3.存储位置<br>4.外键…</p>
+
+      
+    </div>
+
+  </div>
+
+  <div class="article-footer">
+    <div class="article-meta pull-left">
+
+    
+
+    
+
+    </div>
+
+    
+  </div>
+</article>
+
+
+    </main>
+
+    <footer class="site-footer">
+  <p class="site-info">
+    Proudly powered by <a href="https://hexo.io/" target="_blank">Hexo</a> and
+    Theme by <a href="https://github.com/CodeDaraW/Hacker" target="_blank">Hacker</a>
+    <br>
+    
+    &copy; 2019 Zithan
+    
+  </p>
+</footer>
+    
+  </div>
+</div>
+</body>
+</html>

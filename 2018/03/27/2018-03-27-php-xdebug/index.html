@@ -1,0 +1,180 @@
+<!DOCTYPE HTML>
+<html>
+<head><meta name="generator" content="Hexo 3.8.0">
+  <meta charset="utf-8">
+  
+  <title>phpstorm使用xdebug远程调试vagrant &amp; centos7 &amp; php7.2环境代码 | Zithan | for (;;) {学习, 总结, 提炼, 分享}</title>
+
+  
+  <meta name="author" content="Zithan">
+  
+
+  
+  <meta name="description" content="xdebug的安装和配置
+检查是否安装了xdebug
+
+通过phpinfo()和命令php -m查看
+
+
+根据xdebug.org官网下载源码方式安装
+ 官方安装文档
+
+下载源码编译
+wget https://xdebug.org/files/xdebug-2.6.0.tgz
+tar -xzf xdebug-2.6.0.tgz
+cd xdebug-2.6.0
+phpize
+./configure –enable-xdebug
+make
+sudo make install">
+  
+
+  
+  
+  <meta name="keywords" content="">
+  
+
+  <meta id="viewport" name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, minimum-scale=1, user-scalable=no, minimal-ui">
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-status-bar-style" content="black">
+
+  <meta property="og:title" content="phpstorm使用xdebug远程调试vagrant &amp; centos7 &amp; php7.2环境代码">
+
+  <meta property="og:site_name" content="Zithan">
+
+  
+  <meta property="og:image" content="/favicon.ico">
+  
+
+  <link href="/favicon.ico" rel="icon">
+  <link rel="alternate" href="/atom.xml" title="Zithan" type="application/atom+xml">
+  <link rel="stylesheet" href="/css/style.css" media="screen" type="text/css">
+</head>
+
+
+<body>
+<div class="blog">
+  <div class="content">
+
+    <header>
+  <div class="site-branding">
+    <h1 class="site-title">
+      <a href="/">Zithan</a>
+    </h1>
+    <p class="site-description">for (;;) {学习, 总结, 提炼, 分享}</p>
+  </div>
+  <nav class="site-navigation">
+    <ul>
+      
+        <li><a href="/">主页</a></li>
+      
+        <li><a href="/archives">归档</a></li>
+      
+    </ul>
+  </nav>
+</header>
+
+    <main class="site-main posts-loop">
+    <article>
+
+  
+    
+    <h3 class="article-title"><span>phpstorm使用xdebug远程调试vagrant &amp; centos7 &amp; php7.2环境代码</span></h3>
+    
+  
+
+  <div class="article-top-meta">
+    <span class="posted-on">
+      <a href="/2018/03/27/2018-03-27-php-xdebug/" rel="bookmark">
+        <time class="entry-date published" datetime="2018-03-27T09:49:57.000Z">
+          2018-03-27
+        </time>
+      </a>
+    </span>
+  </div>
+
+
+  
+
+  <div class="article-content">
+    <div class="entry">
+      
+        <h4 id="xdebug的安装和配置"><a href="#xdebug的安装和配置" class="headerlink" title="xdebug的安装和配置"></a>xdebug的安装和配置</h4><ol>
+<li><p>检查是否安装了xdebug</p>
+<blockquote>
+<p>通过phpinfo()和命令php -m查看</p>
+</blockquote>
+</li>
+<li><p>根据xdebug.org官网下载源码方式安装</p>
+<p> <a href="https://xdebug.org/docs/install" target="_blank" rel="noopener">官方安装文档</a></p>
+<ul>
+<li>下载源码编译<ol>
+<li>wget <a href="https://xdebug.org/files/xdebug-2.6.0.tgz" target="_blank" rel="noopener">https://xdebug.org/files/xdebug-2.6.0.tgz</a></li>
+<li>tar -xzf xdebug-2.6.0.tgz</li>
+<li>cd xdebug-2.6.0</li>
+<li>phpize</li>
+<li>./configure –enable-xdebug</li>
+<li>make</li>
+<li>sudo make install</li>
+</ol>
+</li>
+</ul>
+</li>
+</ol>
+<a id="more"></a>
+<h4 id="配置php-ini"><a href="#配置php-ini" class="headerlink" title="配置php.ini"></a>配置php.ini</h4><pre><code>1. php.ini的末尾添加
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">zend_extension=xdebug.so</span><br></pre></td></tr></table></figure>
+
+2. 重启nginx/apache服务器
+3. phpinfo()或命令行php -m查看是否安装成功
+4. 在php.ini继续添加下面这些配置
+
+    <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">zend_extension=xdebug.so</span><br><span class="line">xdebug.idekey = &quot;vagrant&quot;</span><br><span class="line">xdebug.default_enable = 1</span><br><span class="line">xdebug.remote_connect_back = 1</span><br><span class="line">xdebug.remote_port = 9000</span><br><span class="line">xdebug.remote_enable = 1</span><br><span class="line">xdebug.remote_autostart = 1</span><br><span class="line">xdebug.remote_handler=&quot;dbgp&quot;</span><br></pre></td></tr></table></figure>
+
+5. 重启服务器
+</code></pre><h4 id="配置phpstorm"><a href="#配置phpstorm" class="headerlink" title="配置phpstorm"></a>配置phpstorm</h4><pre><code>1. Psreferences-&gt;Languages&amp;Frameworks-&gt;PHP-&gt;Deubg的Debug port跟文件php.ini一样
+    ![如图](http://p6amprr57.bkt.clouddn.com/WX20180328-171824.png)
+2. Debug-&gt;DBGp Proxy
+    ![如图](http://p6amprr57.bkt.clouddn.com/WX20180328-171756.png)
+3. Servers新增配置
+    ![如图](http://p6amprr57.bkt.clouddn.com/WX20180328-171854.png)
+4. Run-&gt;Run/Debug Configurations
+    ![如图](http://p6amprr57.bkt.clouddn.com/WX20180328-172011.png)
+5. 开始监听，然后就可以断点调试了。
+</code></pre>
+      
+    </div>
+
+  </div>
+
+  <div class="article-footer">
+    <div class="article-meta pull-left">
+
+    
+
+    
+
+    </div>
+
+    
+  </div>
+</article>
+
+
+    </main>
+
+    <footer class="site-footer">
+  <p class="site-info">
+    Proudly powered by <a href="https://hexo.io/" target="_blank">Hexo</a> and
+    Theme by <a href="https://github.com/CodeDaraW/Hacker" target="_blank">Hacker</a>
+    <br>
+    
+    &copy; 2019 Zithan
+    
+  </p>
+</footer>
+    
+  </div>
+</div>
+</body>
+</html>

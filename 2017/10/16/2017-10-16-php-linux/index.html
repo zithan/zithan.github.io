@@ -1,0 +1,211 @@
+<!DOCTYPE HTML>
+<html>
+<head><meta name="generator" content="Hexo 3.8.0">
+  <meta charset="utf-8">
+  
+  <title>Linux基础 | Zithan | for (;;) {学习, 总结, 提炼, 分享}</title>
+
+  
+  <meta name="author" content="Zithan">
+  
+
+  
+  <meta name="description" content="Linux常用命令系统安全
+sudo, su, chmod, setfacl
+
+进程管理
+w, top, ps, kill, pkill, killall, pstree
+
+用户管理
+id, usermod, useradd, groupadd, userdel
+
+文件系统
+mount, umoun">
+  
+
+  
+  
+  <meta name="keywords" content="">
+  
+
+  <meta id="viewport" name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, minimum-scale=1, user-scalable=no, minimal-ui">
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-status-bar-style" content="black">
+
+  <meta property="og:title" content="Linux基础">
+
+  <meta property="og:site_name" content="Zithan">
+
+  
+  <meta property="og:image" content="/favicon.ico">
+  
+
+  <link href="/favicon.ico" rel="icon">
+  <link rel="alternate" href="/atom.xml" title="Zithan" type="application/atom+xml">
+  <link rel="stylesheet" href="/css/style.css" media="screen" type="text/css">
+</head>
+
+
+<body>
+<div class="blog">
+  <div class="content">
+
+    <header>
+  <div class="site-branding">
+    <h1 class="site-title">
+      <a href="/">Zithan</a>
+    </h1>
+    <p class="site-description">for (;;) {学习, 总结, 提炼, 分享}</p>
+  </div>
+  <nav class="site-navigation">
+    <ul>
+      
+        <li><a href="/">主页</a></li>
+      
+        <li><a href="/archives">归档</a></li>
+      
+    </ul>
+  </nav>
+</header>
+
+    <main class="site-main posts-loop">
+    <article>
+
+  
+    
+    <h3 class="article-title"><span>Linux基础</span></h3>
+    
+  
+
+  <div class="article-top-meta">
+    <span class="posted-on">
+      <a href="/2017/10/16/2017-10-16-php-linux/" rel="bookmark">
+        <time class="entry-date published" datetime="2017-10-16T02:29:34.000Z">
+          2017-10-16
+        </time>
+      </a>
+    </span>
+  </div>
+
+
+  
+
+  <div class="article-content">
+    <div class="entry">
+      
+        <h3 id="Linux常用命令"><a href="#Linux常用命令" class="headerlink" title="Linux常用命令"></a>Linux常用命令</h3><h4 id="系统安全"><a href="#系统安全" class="headerlink" title="系统安全"></a>系统安全</h4><ul>
+<li>sudo, su, chmod, setfacl</li>
+</ul>
+<h4 id="进程管理"><a href="#进程管理" class="headerlink" title="进程管理"></a>进程管理</h4><ul>
+<li>w, top, ps, kill, pkill, killall, pstree</li>
+</ul>
+<h4 id="用户管理"><a href="#用户管理" class="headerlink" title="用户管理"></a>用户管理</h4><ul>
+<li>id, usermod, useradd, groupadd, userdel</li>
+</ul>
+<h4 id="文件系统"><a href="#文件系统" class="headerlink" title="文件系统"></a>文件系统</h4><ul>
+<li>mount, umount, fsck, df, du</li>
+</ul>
+<h4 id="系统关机和重启"><a href="#系统关机和重启" class="headerlink" title="系统关机和重启"></a>系统关机和重启</h4><ul>
+<li>shutdown reboot</li>
+</ul>
+<h4 id="网络应用"><a href="#网络应用" class="headerlink" title="网络应用"></a>网络应用</h4><ul>
+<li>curl, telnet, mail, elinks</li>
+</ul>
+<h4 id="网络测试"><a href="#网络测试" class="headerlink" title="网络测试"></a>网络测试</h4><ul>
+<li>ping, netstat, host</li>
+</ul>
+<h4 id="网络配置"><a href="#网络配置" class="headerlink" title="网络配置"></a>网络配置</h4><ul>
+<li>hostname, ifconfig</li>
+</ul>
+<h4 id="常用工具"><a href="#常用工具" class="headerlink" title="常用工具"></a>常用工具</h4><ul>
+<li>ssh, screen, clear, who, date</li>
+</ul>
+<h4 id="软件包管理"><a href="#软件包管理" class="headerlink" title="软件包管理"></a>软件包管理</h4><ul>
+<li>yum, rpm, apt-get(apt)</li>
+</ul>
+<h4 id="文件查找和比较"><a href="#文件查找和比较" class="headerlink" title="文件查找和比较"></a>文件查找和比较</h4><ul>
+<li>locate, find</li>
+</ul>
+<h4 id="文件内容查看"><a href="#文件内容查看" class="headerlink" title="文件内容查看"></a>文件内容查看</h4><ul>
+<li>head, tail, less, more</li>
+</ul>
+<h4 id="文件处理"><a href="#文件处理" class="headerlink" title="文件处理"></a>文件处理</h4><ul>
+<li>touch, unlink, rename, ln, cat</li>
+</ul>
+<h4 id="目录操作"><a href="#目录操作" class="headerlink" title="目录操作"></a>目录操作</h4><ul>
+<li>cd, mv, rm, pwd, tree, cp, ls</li>
+</ul>
+<h4 id="文件权限属性"><a href="#文件权限属性" class="headerlink" title="文件权限属性"></a>文件权限属性</h4><ul>
+<li>setfacl, chmod, chown, chgrp</li>
+</ul>
+<h4 id="压缩-解压"><a href="#压缩-解压" class="headerlink" title="压缩/解压"></a>压缩/解压</h4><ul>
+<li>bzip2/bunzip2, gzip/gunzip, zip/unzip, tar</li>
+</ul>
+<h4 id="文件传输"><a href="#文件传输" class="headerlink" title="文件传输"></a>文件传输</h4><ul>
+<li>ftp, scp</li>
+</ul>
+<h3 id="Linux系统定时任务"><a href="#Linux系统定时任务" class="headerlink" title="Linux系统定时任务"></a>Linux系统定时任务</h3><h4 id="crontab命令（周期）"><a href="#crontab命令（周期）" class="headerlink" title="crontab命令（周期）"></a>crontab命令（周期）</h4><ul>
+<li>crontab -e</li>
+<li><figure class="highlight plain"><figcaption><span>* * * *```+命令(分 时 日 月 周)</span></figcaption><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line">### at命令(一次性)</span><br><span class="line">- ```# at 2:00 tomorrow</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>at&gt; /home/todo…</p>
+</li>
+<li>at&gt; ctrl+d</li>
+</ul>
+<h3 id="vi-vim编辑器"><a href="#vi-vim编辑器" class="headerlink" title="vi/vim编辑器"></a>vi/vim编辑器</h3><h4 id="模式"><a href="#模式" class="headerlink" title="模式"></a>模式</h4><ul>
+<li>一般模式、编辑模式和命令行模式</li>
+<li>一般模式：删除、复制和粘贴</li>
+<li>切换编辑模式：i, I, o, O, a, A, r, R</li>
+<li>切换命令行模式：:, /, ?</li>
+<li>移动光标：ctrl+f, ctrl+b, 0或者功能键Home, $或则功能键End, G, gg, N+enter</li>
+<li>查找和替换</li>
+<li>删除、复制和粘贴：x, X, dd, ndd, yy, nyy, p, P, ctrl+r, .</li>
+<li>保存和退出： q, w, wq</li>
+<li>视图模式：v, V, ctrl+v, y, d</li>
+<li>配置：:setnu, :setnonu</li>
+</ul>
+<h3 id="shell基础"><a href="#shell基础" class="headerlink" title="shell基础"></a>shell基础</h3><ul>
+<li>脚本执行方式：赋予权限， 直接执行，eg:chmod +x test.sh; ./test.sh</li>
+<li>调用解释器执行脚本：eg:bash, csh, ash, bsh, ksh…</li>
+<li>使用source命令执行脚本</li>
+</ul>
+<h4 id="编写基础"><a href="#编写基础" class="headerlink" title="编写基础"></a>编写基础</h4><ul>
+<li>开头用#！指定基本解释器 eg:#!/bin/sh</li>
+</ul>
+
+      
+    </div>
+
+  </div>
+
+  <div class="article-footer">
+    <div class="article-meta pull-left">
+
+    
+
+    
+
+    </div>
+
+    
+  </div>
+</article>
+
+
+    </main>
+
+    <footer class="site-footer">
+  <p class="site-info">
+    Proudly powered by <a href="https://hexo.io/" target="_blank">Hexo</a> and
+    Theme by <a href="https://github.com/CodeDaraW/Hacker" target="_blank">Hacker</a>
+    <br>
+    
+    &copy; 2019 Zithan
+    
+  </p>
+</footer>
+    
+  </div>
+</div>
+</body>
+</html>

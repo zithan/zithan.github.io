@@ -1,0 +1,180 @@
+<!DOCTYPE HTML>
+<html>
+<head><meta name="generator" content="Hexo 3.8.0">
+  <meta charset="utf-8">
+  
+  <title>centos7-nginx-环境准备 | Zithan | for (;;) {学习, 总结, 提炼, 分享}</title>
+
+  
+  <meta name="author" content="Zithan">
+  
+
+  
+  <meta name="description" content="centos7-nginx-环境准备
+centos &amp;gt;= 7.0 64位
+
+uname;uname -r;uname -a;rpm -q centos-releasecat /etc/redhat-release
+
+
+cpus&amp;gt;=2；memory&amp;gt;=512m
+
+ping www.b">
+  
+
+  
+  
+  <meta name="keywords" content="">
+  
+
+  <meta id="viewport" name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, minimum-scale=1, user-scalable=no, minimal-ui">
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-status-bar-style" content="black">
+
+  <meta property="og:title" content="centos7-nginx-环境准备">
+
+  <meta property="og:site_name" content="Zithan">
+
+  
+  <meta property="og:image" content="/favicon.ico">
+  
+
+  <link href="/favicon.ico" rel="icon">
+  <link rel="alternate" href="/atom.xml" title="Zithan" type="application/atom+xml">
+  <link rel="stylesheet" href="/css/style.css" media="screen" type="text/css">
+</head>
+
+
+<body>
+<div class="blog">
+  <div class="content">
+
+    <header>
+  <div class="site-branding">
+    <h1 class="site-title">
+      <a href="/">Zithan</a>
+    </h1>
+    <p class="site-description">for (;;) {学习, 总结, 提炼, 分享}</p>
+  </div>
+  <nav class="site-navigation">
+    <ul>
+      
+        <li><a href="/">主页</a></li>
+      
+        <li><a href="/archives">归档</a></li>
+      
+    </ul>
+  </nav>
+</header>
+
+    <main class="site-main posts-loop">
+    <article>
+
+  
+    
+    <h3 class="article-title"><span>centos7-nginx-环境准备</span></h3>
+    
+  
+
+  <div class="article-top-meta">
+    <span class="posted-on">
+      <a href="/2017/09/25/2017-09-25-centos4nginx2evn-pre/" rel="bookmark">
+        <time class="entry-date published" datetime="2017-09-25T10:02:59.000Z">
+          2017-09-25
+        </time>
+      </a>
+    </span>
+  </div>
+
+
+  
+
+  <div class="article-content">
+    <div class="entry">
+      
+        <h2 id="centos7-nginx-环境准备"><a href="#centos7-nginx-环境准备" class="headerlink" title="centos7-nginx-环境准备"></a>centos7-nginx-环境准备</h2><ul>
+<li><p>centos &gt;= 7.0 64位</p>
+<blockquote>
+<p>uname;<br>uname -r;<br>uname -a;<br>rpm -q centos-release<br>cat /etc/redhat-release</p>
+</blockquote>
+</li>
+<li><p>cpus&gt;=2；memory&gt;=512m</p>
+</li>
+<li>ping <a href="http://www.baidu.com" target="_blank" rel="noopener">www.baidu.com</a></li>
+<li>yum list|grep gcc<br>-</li>
+<li>关闭iptables规则</li>
+</ul>
+<blockquote>
+<p>iptables -L;<br>iptables -F;<br>iptables -t nat -L<br>iptables -t nat -F</p>
+</blockquote>
+<ul>
+<li>停用selinux<blockquote>
+<p>getenforce<br>setenforce 0</p>
+</blockquote>
+</li>
+</ul>
+<ul>
+<li><p>yum -y install gcc gcc-c++ autoconf pcre pcre-devel make automake</p>
+</li>
+<li><p>yum -y install wget httpd-tools vim</p>
+</li>
+<li>sudo mkdir app backup download logs work</li>
+</ul>
+<h2 id="安装nginx"><a href="#安装nginx" class="headerlink" title="安装nginx"></a>安装nginx</h2><ul>
+<li>添加nginx源–参看官网</li>
+<li>yum -y install nginx</li>
+<li>rpm -ql nginx —安装目录</li>
+</ul>
+<h2 id="配置"><a href="#配置" class="headerlink" title="配置"></a>配置</h2><ul>
+<li>nginx -t；nginx -t -c</li>
+<li>sudo service nginx start</li>
+<li>sudo nginx -s reload</li>
+<li>sudo nginx -s stop</li>
+</ul>
+<p>[vagrant@localhost run]$ sudo nginx -s reload<br>nginx: [error] invalid PID number “” in “/var/run/nginx.pid”<br>nginx: [alert] could not open error log file: open() “/var/log/nginx/error.log” failed (13: Permission denied)<br>[vagrant@localhost run]$ sudo chmod -R 755 /var/log/nginx/<br>sudo nginx -c /etc/nginx/nginx.conf<br>sudo nginx -t<br>sudo nginx -s reload</p>
+<blockquote>
+<p>curl -v <a href="http://www.imooc.com" target="_blank" rel="noopener">www.imooc.com</a> &gt;&gt;/dev/null</p>
+</blockquote>
+<h2 id="nginx请求变量"><a href="#nginx请求变量" class="headerlink" title="nginx请求变量"></a>nginx请求变量</h2><blockquote>
+<p>http请求变量<br>内置变量<br>自定义变量</p>
+</blockquote>
+<h1 id="模块"><a href="#模块" class="headerlink" title="模块"></a>模块</h1><blockquote>
+<p>nignx官方模块<br>第三方模块</p>
+<p>rpm -qf /usr/bin/htpasswd<br>yum -y install httpd-tools</p>
+</blockquote>
+
+      
+    </div>
+
+  </div>
+
+  <div class="article-footer">
+    <div class="article-meta pull-left">
+
+    
+
+    
+
+    </div>
+
+    
+  </div>
+</article>
+
+
+    </main>
+
+    <footer class="site-footer">
+  <p class="site-info">
+    Proudly powered by <a href="https://hexo.io/" target="_blank">Hexo</a> and
+    Theme by <a href="https://github.com/CodeDaraW/Hacker" target="_blank">Hacker</a>
+    <br>
+    
+    &copy; 2019 Zithan
+    
+  </p>
+</footer>
+    
+  </div>
+</div>
+</body>
+</html>

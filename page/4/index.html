@@ -1,0 +1,666 @@
+<!DOCTYPE HTML>
+<html>
+<head><meta name="generator" content="Hexo 3.8.0">
+  <meta charset="utf-8">
+  
+  <title>第 4 页 | Zithan | for (;;) {学习, 总结, 提炼, 分享}</title>
+
+  
+  <meta name="author" content="Zithan">
+  
+
+  
+
+  
+
+  <meta id="viewport" name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, minimum-scale=1, user-scalable=no, minimal-ui">
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-status-bar-style" content="black">
+
+  
+
+  <meta property="og:site_name" content="Zithan">
+
+  
+  <meta property="og:image" content="/favicon.ico">
+  
+
+  <link href="/favicon.ico" rel="icon">
+  <link rel="alternate" href="/atom.xml" title="Zithan" type="application/atom+xml">
+  <link rel="stylesheet" href="/css/style.css" media="screen" type="text/css">
+</head>
+
+
+<body>
+<div class="blog">
+  <div class="content">
+
+    <header>
+  <div class="site-branding">
+    <h1 class="site-title">
+      <a href="/">Zithan</a>
+    </h1>
+    <p class="site-description">for (;;) {学习, 总结, 提炼, 分享}</p>
+  </div>
+  <nav class="site-navigation">
+    <ul>
+      
+        <li><a href="/">主页</a></li>
+      
+        <li><a href="/archives">归档</a></li>
+      
+    </ul>
+  </nav>
+</header>
+
+    <main class="site-main posts-loop">
+    
+  <article>
+
+  
+    
+    <h3 class="article-title"><a href="/2017/09/29/2017-09-29-bubbleSort/"><span>冒泡排序--PHP</span></a></h3>
+    
+  
+
+  <div class="article-top-meta">
+    <span class="posted-on">
+      <a href="/2017/09/29/2017-09-29-bubbleSort/" rel="bookmark">
+        <time class="entry-date published" datetime="2017-09-29T10:29:39.000Z">
+          2017-09-29
+        </time>
+      </a>
+    </span>
+  </div>
+
+
+  
+
+  <div class="article-content">
+    <div class="entry">
+      
+        <figure class="highlight php"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">&lt;?php</span></span><br><span class="line"><span class="comment">// 冒泡排序</span></span><br><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">bubbleSort</span><span class="params">(array $items)</span> </span>&#123;</span><br><span class="line">    $temp = <span class="string">''</span>;</span><br><span class="line">    $count = count($items);</span><br><span class="line"></span><br><span class="line">    <span class="keyword">for</span> ($i = <span class="number">1</span>; $i &lt; $count; $i++) &#123;</span><br><span class="line">        <span class="keyword">for</span> ($j = <span class="number">0</span>; $j &lt; $count-$i; $j++) &#123;</span><br><span class="line">            <span class="keyword">if</span> ($items[$j] &gt; $items[$j+<span class="number">1</span>]) &#123;</span><br><span class="line">                $temp = $items[$j+<span class="number">1</span>];</span><br><span class="line">                $items[$j+<span class="number">1</span>] = $items[$j];</span><br><span class="line">                $items[$j] = $temp;</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">return</span> $items;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">$testItem = <span class="keyword">array</span>(<span class="number">3</span>, <span class="number">8</span>, <span class="number">1</span>, <span class="number">5</span>, <span class="number">9</span>, <span class="number">3</span>, <span class="number">7</span>, <span class="number">2</span>, <span class="number">6</span>, <span class="number">22</span>, <span class="number">-1</span>, <span class="number">12313</span>, <span class="number">444</span>, <span class="number">55</span>, <span class="number">3233</span>);</span><br><span class="line">$return = bubbleSort($testItem);</span><br><span class="line">var_dump($return);</span><br></pre></td></tr></table></figure>
+
+      
+    </div>
+
+  </div>
+
+  <div class="article-footer">
+    <div class="article-meta pull-left">
+
+    
+
+    
+
+    </div>
+
+    
+  </div>
+</article>
+
+
+
+  <article>
+
+  
+    
+    <h3 class="article-title"><a href="/2017/09/29/2017-09-29-quickSort/"><span>快速排序--PHP</span></a></h3>
+    
+  
+
+  <div class="article-top-meta">
+    <span class="posted-on">
+      <a href="/2017/09/29/2017-09-29-quickSort/" rel="bookmark">
+        <time class="entry-date published" datetime="2017-09-29T02:54:31.000Z">
+          2017-09-29
+        </time>
+      </a>
+    </span>
+  </div>
+
+
+  
+
+  <div class="article-content">
+    <div class="entry">
+      
+        <figure class="highlight php"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">&lt;?php</span></span><br><span class="line"><span class="comment">// 快速排序</span></span><br><span class="line"><span class="comment">//（1）在数据集之中，选择一个元素作为"基准"（pivot）。</span></span><br><span class="line"><span class="comment">//（2）所有小于"基准"的元素，都移到"基准"的左边；所有大于"基准"的元素，都移到"基准"的右边。</span></span><br><span class="line"><span class="comment">//（3）对"基准"左边和右边的两个子集，不断重复第一步和第二步，直到所有子集只剩下一个元素为止。</span></span><br><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">quickSort</span><span class="params">(array $items)</span> </span>&#123;</span><br><span class="line">    $count = count($items);</span><br><span class="line">    <span class="keyword">if</span> ($count &lt; <span class="number">2</span>) <span class="keyword">return</span> $items;</span><br><span class="line"></span><br><span class="line">    $pivot = $items[<span class="number">0</span>];</span><br><span class="line">    <span class="keyword">unset</span>($items[<span class="number">0</span>]);</span><br><span class="line">    $left = <span class="keyword">array</span>();</span><br><span class="line">    $right = <span class="keyword">array</span>();</span><br><span class="line">    <span class="keyword">foreach</span> ($items <span class="keyword">as</span> $item) &#123;</span><br><span class="line">        <span class="keyword">if</span> ($item &lt;= $pivot) &#123;</span><br><span class="line">            array_push($left, $item);</span><br><span class="line">        &#125; <span class="keyword">else</span> &#123;</span><br><span class="line">            array_push($right, $item);</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="keyword">return</span> array_merge(quickSort($left), <span class="keyword">array</span>($pivot), quickSort($right));</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">$testItem = <span class="keyword">array</span>(<span class="number">3</span>, <span class="number">8</span>, <span class="number">1</span>, <span class="number">5</span>, <span class="number">9</span>, <span class="number">3</span>, <span class="number">7</span>, <span class="number">2</span>, <span class="number">6</span>, <span class="number">22</span>, <span class="number">-1</span>, <span class="number">12313</span>, <span class="number">444</span>, <span class="number">55</span>, <span class="number">3233</span>);</span><br><span class="line">$return = quickSort($testItem);</span><br><span class="line">var_dump($return);</span><br></pre></td></tr></table></figure>
+
+      
+    </div>
+
+  </div>
+
+  <div class="article-footer">
+    <div class="article-meta pull-left">
+
+    
+
+    
+
+    </div>
+
+    
+  </div>
+</article>
+
+
+
+  <article>
+
+  
+    
+    <h3 class="article-title"><a href="/2017/09/26/2017-09-26-binarySearch/"><span>二分查找--PHP</span></a></h3>
+    
+  
+
+  <div class="article-top-meta">
+    <span class="posted-on">
+      <a href="/2017/09/26/2017-09-26-binarySearch/" rel="bookmark">
+        <time class="entry-date published" datetime="2017-09-26T13:59:31.000Z">
+          2017-09-26
+        </time>
+      </a>
+    </span>
+  </div>
+
+
+  
+
+  <div class="article-content">
+    <div class="entry">
+      
+        <figure class="highlight php"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">&lt;?php</span></span><br><span class="line"><span class="comment">// 二分查找 code4php</span></span><br><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">binarySearch</span><span class="params">(array $items, $search)</span> </span>&#123;</span><br><span class="line">    $low = <span class="number">0</span>;</span><br><span class="line">    $high = count($items) - <span class="number">1</span>;</span><br><span class="line"></span><br><span class="line">    <span class="keyword">while</span> ($low &lt;= $high) &#123;</span><br><span class="line">        $mid = floor(($low + $high) / <span class="number">2</span>);</span><br><span class="line">        $midVal = $items[$mid];</span><br><span class="line">        <span class="comment">// echo $midVal . PHP_EOL;</span></span><br><span class="line">        <span class="keyword">if</span> ($midVal == $search) <span class="keyword">return</span> <span class="string">'finded!!!'</span>;</span><br><span class="line">        <span class="keyword">if</span> ($midVal &gt; $search) &#123;</span><br><span class="line">            $high = $mid - <span class="number">1</span>;</span><br><span class="line">        &#125; <span class="keyword">else</span> &#123;</span><br><span class="line">            $low = $mid + <span class="number">1</span>;</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">return</span> <span class="string">'no find!!!'</span>;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">$items = <span class="keyword">array</span>(<span class="number">1</span>, <span class="number">2</span>, <span class="number">3</span>, <span class="number">5</span>, <span class="number">8</span>, <span class="number">9</span>, <span class="number">23</span>, <span class="number">44</span>, <span class="number">55</span>, <span class="number">66</span>, <span class="number">123</span>, <span class="number">232</span>, <span class="number">444</span>, <span class="number">555</span>);</span><br><span class="line">$result = binary_search($items, <span class="number">123</span>);</span><br><span class="line">print_r($result);</span><br></pre></td></tr></table></figure>
+
+      
+    </div>
+
+  </div>
+
+  <div class="article-footer">
+    <div class="article-meta pull-left">
+
+    
+
+    
+
+    </div>
+
+    
+  </div>
+</article>
+
+
+
+  <article>
+
+  
+    
+    <h3 class="article-title"><a href="/2017/09/26/2017-09-26-selectSort/"><span>选择排序--PHP</span></a></h3>
+    
+  
+
+  <div class="article-top-meta">
+    <span class="posted-on">
+      <a href="/2017/09/26/2017-09-26-selectSort/" rel="bookmark">
+        <time class="entry-date published" datetime="2017-09-26T12:22:11.000Z">
+          2017-09-26
+        </time>
+      </a>
+    </span>
+  </div>
+
+
+  
+
+  <div class="article-content">
+    <div class="entry">
+      
+        <figure class="highlight php"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">&lt;?php</span></span><br><span class="line"><span class="comment">// 选择排序</span></span><br><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">selectSort</span><span class="params">(array $item)</span> </span>&#123;</span><br><span class="line">    $returnItem = [];</span><br><span class="line">    $len = count($item);</span><br><span class="line">    <span class="keyword">for</span>($j = <span class="number">0</span>; $j &lt; $len; $j++) &#123;</span><br><span class="line">        $smallest_index = findSmallest($item);</span><br><span class="line">        array_push($returnItem, $item[$smallest_index]);</span><br><span class="line">        array_splice($item, $smallest_index, <span class="number">1</span>);</span><br><span class="line">        <span class="comment">// var_dump($item);</span></span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">return</span> $returnItem;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="comment">// 找出数组中最小数的索引</span></span><br><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">findSmallest</span><span class="params">(array $item)</span> </span>&#123;</span><br><span class="line">    $smallest_index = <span class="number">0</span>;</span><br><span class="line">    $len = count($item);</span><br><span class="line">    <span class="keyword">for</span> ($i = <span class="number">1</span>; $i &lt; $len; $i++) &#123;</span><br><span class="line">        <span class="keyword">if</span> ($item[$i] &lt; $item[$smallest_index]) &#123;</span><br><span class="line">            $smallest = $item[$i];</span><br><span class="line">            $smallest_index = $i;</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">return</span> $smallest_index;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">$testItem = <span class="keyword">array</span>(<span class="number">3</span>, <span class="number">8</span>, <span class="number">1</span>, <span class="number">5</span>, <span class="number">9</span>, <span class="number">4</span>, <span class="number">7</span>, <span class="number">2</span>, <span class="number">6</span>, <span class="number">22</span>, <span class="number">-1</span>, <span class="number">12313</span>, <span class="number">444</span>, <span class="number">55</span>, <span class="number">3233</span>);</span><br><span class="line">$return = selectSort($testItem);</span><br><span class="line">var_dump($return);</span><br></pre></td></tr></table></figure>
+
+      
+    </div>
+
+  </div>
+
+  <div class="article-footer">
+    <div class="article-meta pull-left">
+
+    
+
+    
+
+    </div>
+
+    
+  </div>
+</article>
+
+
+
+  <article>
+
+  
+    
+    <h3 class="article-title"><a href="/2017/09/25/2017-09-25-centos4nginx2evn-pre/"><span>centos7-nginx-环境准备</span></a></h3>
+    
+  
+
+  <div class="article-top-meta">
+    <span class="posted-on">
+      <a href="/2017/09/25/2017-09-25-centos4nginx2evn-pre/" rel="bookmark">
+        <time class="entry-date published" datetime="2017-09-25T10:02:59.000Z">
+          2017-09-25
+        </time>
+      </a>
+    </span>
+  </div>
+
+
+  
+
+  <div class="article-content">
+    <div class="entry">
+      
+        <h2 id="centos7-nginx-环境准备"><a href="#centos7-nginx-环境准备" class="headerlink" title="centos7-nginx-环境准备"></a>centos7-nginx-环境准备</h2><ul>
+<li><p>centos &gt;= 7.0 64位</p>
+<blockquote>
+<p>uname;<br>uname -r;<br>uname -a;<br>rpm -q centos-release<br>cat /etc/redhat-release</p>
+</blockquote>
+</li>
+<li><p>cpus&gt;=2；memory&gt;=512m</p>
+</li>
+<li>ping <a href="http://www.baidu.com" target="_blank" rel="noopener">www.baidu.com</a></li>
+<li>yum list|grep gcc<br>-</li>
+<li>关闭iptables规则</li>
+</ul>
+<blockquote>
+<p>iptables -L;<br>iptables -F;<br>iptables -t nat -L<br>iptables -t nat -F</p>
+</blockquote>
+<ul>
+<li>停用selinux<blockquote>
+<p>getenforce<br>setenforce 0</p>
+</blockquote>
+</li>
+</ul>
+<ul>
+<li><p>yum -y install gcc gcc-c++ autoconf pcre pcre-devel make automake</p>
+</li>
+<li><p>yum -y install wget httpd-tools vim</p>
+</li>
+<li>sudo mkdir app backup download logs work</li>
+</ul>
+<h2 id="安装nginx"><a href="#安装nginx" class="headerlink" title="安装nginx"></a>安装nginx</h2><ul>
+<li>添加nginx源–参看官网</li>
+<li>yum -y install nginx</li>
+<li>rpm -ql nginx —安装目录</li>
+</ul>
+<h2 id="配置"><a href="#配置" class="headerlink" title="配置"></a>配置</h2><ul>
+<li>nginx -t；nginx -t -c</li>
+<li>sudo service nginx start</li>
+<li>sudo nginx -s reload</li>
+<li>sudo nginx -s stop</li>
+</ul>
+<p>[vagrant@localhost run]$ sudo nginx -s reload<br>nginx: [error] invalid PID number “” in “/var/run/nginx.pid”<br>nginx: [alert] could not open error log file: open() “/var/log/nginx/error.log” failed (13: Permission denied)<br>[vagrant@localhost run]$ sudo chmod -R 755 /var/log/nginx/<br>sudo nginx -c /etc/nginx/nginx.conf<br>sudo nginx -t<br>sudo nginx -s reload</p>
+<blockquote>
+<p>curl -v <a href="http://www.imooc.com" target="_blank" rel="noopener">www.imooc.com</a> &gt;&gt;/dev/null</p>
+</blockquote>
+<h2 id="nginx请求变量"><a href="#nginx请求变量" class="headerlink" title="nginx请求变量"></a>nginx请求变量</h2><blockquote>
+<p>http请求变量<br>内置变量<br>自定义变量</p>
+</blockquote>
+<h1 id="模块"><a href="#模块" class="headerlink" title="模块"></a>模块</h1><blockquote>
+<p>nignx官方模块<br>第三方模块</p>
+<p>rpm -qf /usr/bin/htpasswd<br>yum -y install httpd-tools</p>
+</blockquote>
+
+      
+    </div>
+
+  </div>
+
+  <div class="article-footer">
+    <div class="article-meta pull-left">
+
+    
+
+    
+
+    </div>
+
+    
+  </div>
+</article>
+
+
+
+  <article>
+
+  
+    
+    <h3 class="article-title"><a href="/2017/09/24/2017-09-24-operators/"><span>operators</span></a></h3>
+    
+  
+
+  <div class="article-top-meta">
+    <span class="posted-on">
+      <a href="/2017/09/24/2017-09-24-operators/" rel="bookmark">
+        <time class="entry-date published" datetime="2017-09-24T14:47:05.000Z">
+          2017-09-24
+        </time>
+      </a>
+    </span>
+  </div>
+
+
+  
+
+  <div class="article-content">
+    <div class="entry">
+      
+        <h2 id="运算符"><a href="#运算符" class="headerlink" title="运算符"></a>运算符</h2><h3 id="优先级"><a href="#优先级" class="headerlink" title="优先级"></a>优先级</h3><blockquote>
+<p>递增/递减&gt;!&gt;算数运算符&gt;大小比较&gt;（不）相等比较&gt;引用&gt;位运算符（^）&gt;位运算符(|)&gt;逻辑与&gt;逻辑或&gt;三目&gt;赋值&gt;and&gt;xor&gt;or</p>
+</blockquote>
+<h3 id="和-区别"><a href="#和-区别" class="headerlink" title="==和===区别"></a>==和===区别</h3><h3 id="递增-递减运算符"><a href="#递增-递减运算符" class="headerlink" title="递增/递减运算符"></a>递增/递减运算符</h3><p>. 递增/递减运算符不影响布尔值<br>. 递减NULL值没影响<br>. 递增NULL为1</p>
+<h3 id="逻辑运算符"><a href="#逻辑运算符" class="headerlink" title="逻辑运算符"></a>逻辑运算符</h3><p>. 短路作用</p>
+
+      
+    </div>
+
+  </div>
+
+  <div class="article-footer">
+    <div class="article-meta pull-left">
+
+    
+
+    
+
+    </div>
+
+    
+  </div>
+</article>
+
+
+
+  <article>
+
+  
+    
+    <h3 class="article-title"><a href="/2017/09/18/2017-09-18-types/"><span>PHP数据类型</span></a></h3>
+    
+  
+
+  <div class="article-top-meta">
+    <span class="posted-on">
+      <a href="/2017/09/18/2017-09-18-types/" rel="bookmark">
+        <time class="entry-date published" datetime="2017-09-18T07:05:05.000Z">
+          2017-09-18
+        </time>
+      </a>
+    </span>
+  </div>
+
+
+  
+
+  <div class="article-content">
+    <div class="entry">
+      
+        <h2 id="PHP数据类型"><a href="#PHP数据类型" class="headerlink" title="PHP数据类型"></a>PHP数据类型</h2><h3 id="分类"><a href="#分类" class="headerlink" title="分类"></a>分类</h3><blockquote>
+<p>共9个，分为3大类</p>
+</blockquote>
+<h4 id="标量类型"><a href="#标量类型" class="headerlink" title="标量类型"></a>标量类型</h4><ul>
+<li>float</li>
+</ul>
+<blockquote>
+<p>所以永远不要相信浮点数结果精确到了最后一位，也永远不要比较两个浮点数是否相等。</p>
+</blockquote>
+<ul>
+<li>integer</li>
+</ul>
+<ul>
+<li>string</li>
+</ul>
+<blockquote>
+<p>单引号</p>
+<p>双引号</p>
+<p>heredoc 语法结构</p>
+<p>nowdoc 语法结构</p>
+</blockquote>
+<ul>
+<li>boolean</li>
+</ul>
+<blockquote>
+<p>当转换为 boolean 时，以下值被认为是 FALSE：</p>
+<p>布尔值 FALSE 本身</p>
+<p>整型值 0（零）</p>
+<p>浮点型值 0.0（零）</p>
+<p>空字符串，</p>
+<p>以及字符串 “0”</p>
+<p>不包括任何元素的数组</p>
+<p>特殊类型 NULL（包括尚未赋值的变量</p>
+</blockquote>
+<h4 id="复合类型"><a href="#复合类型" class="headerlink" title="复合类型"></a>复合类型</h4><ul>
+<li>array</li>
+<li>object</li>
+<li>callback</li>
+</ul>
+<h4 id="特殊类型"><a href="#特殊类型" class="headerlink" title="特殊类型"></a>特殊类型</h4><ul>
+<li>NULL</li>
+</ul>
+<blockquote>
+<p>在下列情况下一个变量被认为是 NULL：</p>
+</blockquote>
+<blockquote>
+<p>被赋值为 NULL。</p>
+</blockquote>
+<blockquote>
+<p>尚未被赋值。</p>
+</blockquote>
+<blockquote>
+<p>被 unset()。</p>
+</blockquote>
+<ul>
+<li>resource</li>
+</ul>
+<h3 id="转换类型"><a href="#转换类型" class="headerlink" title="转换类型"></a>转换类型</h3><ul>
+<li>php是弱类型，会根据情景转变数据类型eg.string<em>integer=integer;integer</em>fload=fload;</li>
+<li>强制转化—(type)$aaa</li>
+<li>settype—-settype($aaa, type)</li>
+</ul>
+<h3 id="常量"><a href="#常量" class="headerlink" title="常量"></a>常量</h3><blockquote>
+<p>define()与const</p>
+</blockquote>
+<h3 id="魔术常量（预定义常量）-8"><a href="#魔术常量（预定义常量）-8" class="headerlink" title="魔术常量（预定义常量）(8)"></a>魔术常量（预定义常量）(8)</h3><ul>
+<li><strong>NAMESPACE</strong></li>
+<li><strong>CLASS</strong></li>
+<li><strong>TRAIT</strong></li>
+<li><strong>FUNCTION</strong></li>
+<li><strong>METHOD</strong></li>
+<li><strong>DIR</strong></li>
+<li><strong>FILE</strong></li>
+<li><strong>LINE</strong></li>
+</ul>
+<h3 id="超全局数组-9"><a href="#超全局数组-9" class="headerlink" title="超全局数组(9)"></a>超全局数组(9)</h3><ul>
+<li>$GLOBAL</li>
+<li>$_SERVER</li>
+<li>$_GET</li>
+<li>$_POST</li>
+<li>$_REQUEST</li>
+<li>$_SESSION</li>
+<li>$_COOKIE</li>
+<li>$_FILES</li>
+<li>$-ENV</li>
+</ul>
+
+      
+    </div>
+
+  </div>
+
+  <div class="article-footer">
+    <div class="article-meta pull-left">
+
+    
+
+    
+
+    </div>
+
+    
+  </div>
+</article>
+
+
+
+  <article>
+
+  
+    
+    <h3 class="article-title"><a href="/2017/09/18/2017-09-18-php-reference/"><span>php_reference</span></a></h3>
+    
+  
+
+  <div class="article-top-meta">
+    <span class="posted-on">
+      <a href="/2017/09/18/2017-09-18-php-reference/" rel="bookmark">
+        <time class="entry-date published" datetime="2017-09-17T16:28:54.000Z">
+          2017-09-18
+        </time>
+      </a>
+    </span>
+  </div>
+
+
+  
+
+  <div class="article-content">
+    <div class="entry">
+      
+        <h1 id="引用"><a href="#引用" class="headerlink" title="引用"></a>引用</h1><blockquote>
+<p>是什么：在 PHP 中引用意味着用不同的名字访问同一个变量内容。</p>
+</blockquote>
+<blockquote>
+<p>做什么：PHP 的引用允许用两个变量来指向同一个内容。</p>
+<p>注意在PHP 中，变量名和变量内容是不一样的， 因此同样的内容可以有不同的名字。</p>
+</blockquote>
+<h3 id="引用传递"><a href="#引用传递" class="headerlink" title="引用传递"></a>引用传递</h3><h3 id="引用返回"><a href="#引用返回" class="headerlink" title="引用返回"></a>引用返回</h3><h3 id="对象引用"><a href="#对象引用" class="headerlink" title="对象引用"></a>对象引用</h3><h3 id="取消引用"><a href="#取消引用" class="headerlink" title="取消引用"></a>取消引用</h3><blockquote>
+<p>当 unset 一个引用，只是断开了变量名和变量内容之间的绑定。这并不意味着变量内容被销毁了</p>
+</blockquote>
+<h3 id="其他引用"><a href="#其他引用" class="headerlink" title="其他引用"></a>其他引用</h3><ul>
+<li>global 引用</li>
+</ul>
+<blockquote>
+<p>当用 global $var 声明一个变量时实际上建立了一个到全局变量的引用。也就是说和这样做是相同的：</p>
+<p>&lt;?php<br>$var =&amp; $GLOBALS[“var”];<br>?&gt;<br>这意味着，例如，unset $var 不会 unset 全局变量。</p>
+</blockquote>
+<ul>
+<li>$this 引用</li>
+</ul>
+<blockquote>
+<p>在一个对象的方法中，$this 永远是调用它的对象的引用。</p>
+</blockquote>
+<hr>
+<blockquote>
+<p>引申知识</p>
+</blockquote>
+<ul>
+<li>memory-get-usage();</li>
+<li>zval:变量容器</li>
+<li>xdebug-debug-zval();</li>
+<li>COW</li>
+<li>clone</li>
+<li>画图分析法</li>
+</ul>
+
+      
+    </div>
+
+  </div>
+
+  <div class="article-footer">
+    <div class="article-meta pull-left">
+
+    
+
+    
+
+    </div>
+
+    
+  </div>
+</article>
+
+
+
+  <article>
+
+  
+    
+    <h3 class="article-title"><a href="/2017/09/13/2017-09-13-yuzhou01/"><span>yuzhou01</span></a></h3>
+    
+  
+
+  <div class="article-top-meta">
+    <span class="posted-on">
+      <a href="/2017/09/13/2017-09-13-yuzhou01/" rel="bookmark">
+        <time class="entry-date published" datetime="2017-09-13T15:16:14.000Z">
+          2017-09-13
+        </time>
+      </a>
+    </span>
+  </div>
+
+
+  
+
+  <div class="article-content">
+    <div class="entry">
+      
+        
+      
+    </div>
+
+  </div>
+
+  <div class="article-footer">
+    <div class="article-meta pull-left">
+
+    
+
+    
+
+    </div>
+
+    
+  </div>
+</article>
+
+
+
+
+<nav class="pagination">
+  
+  <a href="/page/3/" class="pagination-prev">上一页</a>
+  
+  
+</nav>
+    </main>
+
+    <footer class="site-footer">
+  <p class="site-info">
+    Proudly powered by <a href="https://hexo.io/" target="_blank">Hexo</a> and
+    Theme by <a href="https://github.com/CodeDaraW/Hacker" target="_blank">Hacker</a>
+    <br>
+    
+    &copy; 2019 Zithan
+    
+  </p>
+</footer>
+    
+  </div>
+</div>
+</body>
+</html>

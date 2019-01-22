@@ -1,0 +1,233 @@
+<!DOCTYPE HTML>
+<html>
+<head><meta name="generator" content="Hexo 3.8.0">
+  <meta charset="utf-8">
+  
+  <title>PHP数据类型 | Zithan | for (;;) {学习, 总结, 提炼, 分享}</title>
+
+  
+  <meta name="author" content="Zithan">
+  
+
+  
+  <meta name="description" content="PHP数据类型分类
+共9个，分为3大类
+
+标量类型
+float
+
+
+所以永远不要相信浮点数结果精确到了最后一位，也永远不要比较两个浮点数是否相等。
+
+
+integer
+
+
+string
+
+
+单引号
+双引号
+heredoc 语法结构
+nowdoc 语法结构
+
+
+boolean
+
+
+当转换为 boole">
+  
+
+  
+  
+  <meta name="keywords" content="">
+  
+
+  <meta id="viewport" name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, minimum-scale=1, user-scalable=no, minimal-ui">
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-status-bar-style" content="black">
+
+  <meta property="og:title" content="PHP数据类型">
+
+  <meta property="og:site_name" content="Zithan">
+
+  
+  <meta property="og:image" content="/favicon.ico">
+  
+
+  <link href="/favicon.ico" rel="icon">
+  <link rel="alternate" href="/atom.xml" title="Zithan" type="application/atom+xml">
+  <link rel="stylesheet" href="/css/style.css" media="screen" type="text/css">
+</head>
+
+
+<body>
+<div class="blog">
+  <div class="content">
+
+    <header>
+  <div class="site-branding">
+    <h1 class="site-title">
+      <a href="/">Zithan</a>
+    </h1>
+    <p class="site-description">for (;;) {学习, 总结, 提炼, 分享}</p>
+  </div>
+  <nav class="site-navigation">
+    <ul>
+      
+        <li><a href="/">主页</a></li>
+      
+        <li><a href="/archives">归档</a></li>
+      
+    </ul>
+  </nav>
+</header>
+
+    <main class="site-main posts-loop">
+    <article>
+
+  
+    
+    <h3 class="article-title"><span>PHP数据类型</span></h3>
+    
+  
+
+  <div class="article-top-meta">
+    <span class="posted-on">
+      <a href="/2017/09/18/2017-09-18-types/" rel="bookmark">
+        <time class="entry-date published" datetime="2017-09-18T07:05:05.000Z">
+          2017-09-18
+        </time>
+      </a>
+    </span>
+  </div>
+
+
+  
+
+  <div class="article-content">
+    <div class="entry">
+      
+        <h2 id="PHP数据类型"><a href="#PHP数据类型" class="headerlink" title="PHP数据类型"></a>PHP数据类型</h2><h3 id="分类"><a href="#分类" class="headerlink" title="分类"></a>分类</h3><blockquote>
+<p>共9个，分为3大类</p>
+</blockquote>
+<h4 id="标量类型"><a href="#标量类型" class="headerlink" title="标量类型"></a>标量类型</h4><ul>
+<li>float</li>
+</ul>
+<blockquote>
+<p>所以永远不要相信浮点数结果精确到了最后一位，也永远不要比较两个浮点数是否相等。</p>
+</blockquote>
+<ul>
+<li>integer</li>
+</ul>
+<ul>
+<li>string</li>
+</ul>
+<blockquote>
+<p>单引号</p>
+<p>双引号</p>
+<p>heredoc 语法结构</p>
+<p>nowdoc 语法结构</p>
+</blockquote>
+<ul>
+<li>boolean</li>
+</ul>
+<blockquote>
+<p>当转换为 boolean 时，以下值被认为是 FALSE：</p>
+<p>布尔值 FALSE 本身</p>
+<p>整型值 0（零）</p>
+<p>浮点型值 0.0（零）</p>
+<p>空字符串，</p>
+<p>以及字符串 “0”</p>
+<p>不包括任何元素的数组</p>
+<p>特殊类型 NULL（包括尚未赋值的变量</p>
+</blockquote>
+<h4 id="复合类型"><a href="#复合类型" class="headerlink" title="复合类型"></a>复合类型</h4><ul>
+<li>array</li>
+<li>object</li>
+<li>callback</li>
+</ul>
+<h4 id="特殊类型"><a href="#特殊类型" class="headerlink" title="特殊类型"></a>特殊类型</h4><ul>
+<li>NULL</li>
+</ul>
+<blockquote>
+<p>在下列情况下一个变量被认为是 NULL：</p>
+</blockquote>
+<blockquote>
+<p>被赋值为 NULL。</p>
+</blockquote>
+<blockquote>
+<p>尚未被赋值。</p>
+</blockquote>
+<blockquote>
+<p>被 unset()。</p>
+</blockquote>
+<ul>
+<li>resource</li>
+</ul>
+<h3 id="转换类型"><a href="#转换类型" class="headerlink" title="转换类型"></a>转换类型</h3><ul>
+<li>php是弱类型，会根据情景转变数据类型eg.string<em>integer=integer;integer</em>fload=fload;</li>
+<li>强制转化—(type)$aaa</li>
+<li>settype—-settype($aaa, type)</li>
+</ul>
+<h3 id="常量"><a href="#常量" class="headerlink" title="常量"></a>常量</h3><blockquote>
+<p>define()与const</p>
+</blockquote>
+<h3 id="魔术常量（预定义常量）-8"><a href="#魔术常量（预定义常量）-8" class="headerlink" title="魔术常量（预定义常量）(8)"></a>魔术常量（预定义常量）(8)</h3><ul>
+<li><strong>NAMESPACE</strong></li>
+<li><strong>CLASS</strong></li>
+<li><strong>TRAIT</strong></li>
+<li><strong>FUNCTION</strong></li>
+<li><strong>METHOD</strong></li>
+<li><strong>DIR</strong></li>
+<li><strong>FILE</strong></li>
+<li><strong>LINE</strong></li>
+</ul>
+<h3 id="超全局数组-9"><a href="#超全局数组-9" class="headerlink" title="超全局数组(9)"></a>超全局数组(9)</h3><ul>
+<li>$GLOBAL</li>
+<li>$_SERVER</li>
+<li>$_GET</li>
+<li>$_POST</li>
+<li>$_REQUEST</li>
+<li>$_SESSION</li>
+<li>$_COOKIE</li>
+<li>$_FILES</li>
+<li>$-ENV</li>
+</ul>
+
+      
+    </div>
+
+  </div>
+
+  <div class="article-footer">
+    <div class="article-meta pull-left">
+
+    
+
+    
+
+    </div>
+
+    
+  </div>
+</article>
+
+
+    </main>
+
+    <footer class="site-footer">
+  <p class="site-info">
+    Proudly powered by <a href="https://hexo.io/" target="_blank">Hexo</a> and
+    Theme by <a href="https://github.com/CodeDaraW/Hacker" target="_blank">Hacker</a>
+    <br>
+    
+    &copy; 2019 Zithan
+    
+  </p>
+</footer>
+    
+  </div>
+</div>
+</body>
+</html>

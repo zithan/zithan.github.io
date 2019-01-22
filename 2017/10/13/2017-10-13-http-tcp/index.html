@@ -1,0 +1,153 @@
+<!DOCTYPE HTML>
+<html>
+<head><meta name="generator" content="Hexo 3.8.0">
+  <meta charset="utf-8">
+  
+  <title>网络协议 | Zithan | for (;;) {学习, 总结, 提炼, 分享}</title>
+
+  
+  <meta name="author" content="Zithan">
+  
+
+  
+  <meta name="description" content="http协议状态码
+
+1XX：信息状态码2XX：成功状态码3XX：重定向状态码4XX：客户端错误状态码5XX：服务器错误状态码常见的状态码：200，204，206，301，302， 303， 304， 307， 400， 401，403， 404， 500，503；
+tcp/ip 5层和OSI七层模">
+  
+
+  
+  
+  <meta name="keywords" content="">
+  
+
+  <meta id="viewport" name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, minimum-scale=1, user-scalable=no, minimal-ui">
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-status-bar-style" content="black">
+
+  <meta property="og:title" content="网络协议">
+
+  <meta property="og:site_name" content="Zithan">
+
+  
+  <meta property="og:image" content="/favicon.ico">
+  
+
+  <link href="/favicon.ico" rel="icon">
+  <link rel="alternate" href="/atom.xml" title="Zithan" type="application/atom+xml">
+  <link rel="stylesheet" href="/css/style.css" media="screen" type="text/css">
+</head>
+
+
+<body>
+<div class="blog">
+  <div class="content">
+
+    <header>
+  <div class="site-branding">
+    <h1 class="site-title">
+      <a href="/">Zithan</a>
+    </h1>
+    <p class="site-description">for (;;) {学习, 总结, 提炼, 分享}</p>
+  </div>
+  <nav class="site-navigation">
+    <ul>
+      
+        <li><a href="/">主页</a></li>
+      
+        <li><a href="/archives">归档</a></li>
+      
+    </ul>
+  </nav>
+</header>
+
+    <main class="site-main posts-loop">
+    <article>
+
+  
+    
+    <h3 class="article-title"><span>网络协议</span></h3>
+    
+  
+
+  <div class="article-top-meta">
+    <span class="posted-on">
+      <a href="/2017/10/13/2017-10-13-http-tcp/" rel="bookmark">
+        <time class="entry-date published" datetime="2017-10-13T08:41:53.000Z">
+          2017-10-13
+        </time>
+      </a>
+    </span>
+  </div>
+
+
+  
+
+  <div class="article-content">
+    <div class="entry">
+      
+        <ul>
+<li>http协议状态码<blockquote>
+</blockquote>
+1XX：信息状态码<br>2XX：成功状态码<br>3XX：重定向状态码<br>4XX：客户端错误状态码<br>5XX：服务器错误状态码<br>常见的状态码：200，204，206，301，302， 303， 304， 307， 400， 401，403， 404， 500，503；</li>
+<li>tcp/ip 5层和OSI七层模型<blockquote>
+<p>OSI七层模型<br>物理层、数据链路层、网络层、传输层、会话层、表示层、应用层</p>
+</blockquote>
+</li>
+<li>http协议的工作特点和原理 http1.0 http1.1 http2.0<blockquote>
+<p>特点<br>基于B/S模式<br>通信开销小、简单快速、传输成本低<br>使用灵活、可使用超文本传输协议<br>节省传输时间<br>无状态</p>
+</blockquote>
+</li>
+</ul>
+<blockquote>
+<p>原理<br>客户端发送请求给服务器，创建一个TCP连接，指定端口号，默认80，连接到服务器，服务器监听浏览器请求，一旦监听到客户端请求，分析请求类型后，服务器会向客户端返回状态信息和数据内容。</p>
+</blockquote>
+<ul>
+<li>http协议常见的请求/响应头和请求方法<br>Content-Type<br>Accept<br>Origin<br>Cooke<br>Cache-Control<br>User-Agent<br>Referrer<br>X-Forwarded-For<br>Access-Control-Allow-Origin<br>Last_-Modified</li>
+</ul>
+<p>请求方法（7）：<br>GET<br>POST<br>HEAD<br>OPTIONS<br>PUT<br>DELETE<br>TRACE</p>
+<p>GET和POST区别：<br>刷新-无害有害<br>书签<br>缓存<br>request body<br>浏览器历史<br>长度(取决于浏览器)<br>数据类型<br>安全性</p>
+<ul>
+<li>https协议的工作原理<blockquote>
+<p>https是一种基于SSL/TLS的http协议，所有的http数据都是在SSL/TLS协议封装之上传输的。<br>HTTPS协议在HTTP协议的基础之上，添加了ssl/tls握手以及数据加密协议，也属于应用层协议。</p>
+</blockquote>
+</li>
+</ul>
+<p>常见网络协议含义及端口<br>ftp:21<br>telnet:23<br>smtp:25<br>pop3:110<br>http:80<br>dns: 53</p>
+
+      
+    </div>
+
+  </div>
+
+  <div class="article-footer">
+    <div class="article-meta pull-left">
+
+    
+
+    
+
+    </div>
+
+    
+  </div>
+</article>
+
+
+    </main>
+
+    <footer class="site-footer">
+  <p class="site-info">
+    Proudly powered by <a href="https://hexo.io/" target="_blank">Hexo</a> and
+    Theme by <a href="https://github.com/CodeDaraW/Hacker" target="_blank">Hacker</a>
+    <br>
+    
+    &copy; 2019 Zithan
+    
+  </p>
+</footer>
+    
+  </div>
+</div>
+</body>
+</html>

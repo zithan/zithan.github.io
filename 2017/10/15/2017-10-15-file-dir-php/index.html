@@ -1,0 +1,216 @@
+<!DOCTYPE HTML>
+<html>
+<head><meta name="generator" content="Hexo 3.8.0">
+  <meta charset="utf-8">
+  
+  <title>PHP文件和目录操作 | Zithan | for (;;) {学习, 总结, 提炼, 分享}</title>
+
+  
+  <meta name="author" content="Zithan">
+  
+
+  
+  <meta name="description" content="文件读取/写入操作文件的操作打开
+fopen()用来打开一个文件，打开时需要指定打开模式打开模式：r/r+（指针在开头，但是加入的内容后向后替代相等字符串长度）、w/w+、a/a+、x/x+、（b、t配合前面几个使用）
+
+写入
+fwrite()
+fputs()
+
+读取
+fread()
+fgets()">
+  
+
+  
+  
+  <meta name="keywords" content="">
+  
+
+  <meta id="viewport" name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, minimum-scale=1, user-scalable=no, minimal-ui">
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-status-bar-style" content="black">
+
+  <meta property="og:title" content="PHP文件和目录操作">
+
+  <meta property="og:site_name" content="Zithan">
+
+  
+  <meta property="og:image" content="/favicon.ico">
+  
+
+  <link href="/favicon.ico" rel="icon">
+  <link rel="alternate" href="/atom.xml" title="Zithan" type="application/atom+xml">
+  <link rel="stylesheet" href="/css/style.css" media="screen" type="text/css">
+</head>
+
+
+<body>
+<div class="blog">
+  <div class="content">
+
+    <header>
+  <div class="site-branding">
+    <h1 class="site-title">
+      <a href="/">Zithan</a>
+    </h1>
+    <p class="site-description">for (;;) {学习, 总结, 提炼, 分享}</p>
+  </div>
+  <nav class="site-navigation">
+    <ul>
+      
+        <li><a href="/">主页</a></li>
+      
+        <li><a href="/archives">归档</a></li>
+      
+    </ul>
+  </nav>
+</header>
+
+    <main class="site-main posts-loop">
+    <article>
+
+  
+    
+    <h3 class="article-title"><span>PHP文件和目录操作</span></h3>
+    
+  
+
+  <div class="article-top-meta">
+    <span class="posted-on">
+      <a href="/2017/10/15/2017-10-15-file-dir-php/" rel="bookmark">
+        <time class="entry-date published" datetime="2017-10-15T08:02:32.000Z">
+          2017-10-15
+        </time>
+      </a>
+    </span>
+  </div>
+
+
+  
+
+  <div class="article-content">
+    <div class="entry">
+      
+        <h2 id="文件读取-写入操作"><a href="#文件读取-写入操作" class="headerlink" title="文件读取/写入操作"></a>文件读取/写入操作</h2><h3 id="文件的操作"><a href="#文件的操作" class="headerlink" title="文件的操作"></a>文件的操作</h3><h4 id="打开"><a href="#打开" class="headerlink" title="打开"></a>打开</h4><ul>
+<li>fopen()<br>用来打开一个文件，打开时需要指定打开模式<br>打开模式：r/r+（指针在开头，但是加入的内容后向后替代相等字符串长度）、w/w+、a/a+、x/x+、（b、t配合前面几个使用）</li>
+</ul>
+<h4 id="写入"><a href="#写入" class="headerlink" title="写入"></a>写入</h4><ul>
+<li>fwrite()</li>
+<li>fputs()</li>
+</ul>
+<h4 id="读取"><a href="#读取" class="headerlink" title="读取"></a>读取</h4><ul>
+<li>fread()</li>
+<li>fgets()获取一行</li>
+<li>fgetc()获取一个字符</li>
+</ul>
+<h4 id="关闭"><a href="#关闭" class="headerlink" title="关闭"></a>关闭</h4><ul>
+<li>fclose()</li>
+</ul>
+<h4 id="不需要fopen-的函数"><a href="#不需要fopen-的函数" class="headerlink" title="不需要fopen()的函数"></a>不需要fopen()的函数</h4><ul>
+<li>file_get_contents()</li>
+<li>file_put_contents()</li>
+</ul>
+<h4 id="其他读取函数哦"><a href="#其他读取函数哦" class="headerlink" title="其他读取函数哦"></a>其他读取函数哦</h4><ul>
+<li>file()</li>
+<li>readfile()</li>
+</ul>
+<hr>
+<h4 id="远程访问文件"><a href="#远程访问文件" class="headerlink" title="远程访问文件"></a>远程访问文件</h4><ul>
+<li>开启allow_url_fopen， HTTP协议连接只能使用只读，ftp协议可以使用只读或只写</li>
+</ul>
+<h3 id="目录相关的操作"><a href="#目录相关的操作" class="headerlink" title="目录相关的操作"></a>目录相关的操作</h3><h4 id="名称相关"><a href="#名称相关" class="headerlink" title="名称相关"></a>名称相关</h4><ul>
+<li>basename()</li>
+<li>dirname()</li>
+<li>pathinfo()</li>
+</ul>
+<h4 id="目录读取"><a href="#目录读取" class="headerlink" title="目录读取"></a>目录读取</h4><ul>
+<li>opendir()</li>
+<li>readdir()</li>
+<li>closedir()</li>
+<li>rewinddir()</li>
+</ul>
+<h4 id="目录删除"><a href="#目录删除" class="headerlink" title="目录删除"></a>目录删除</h4><ul>
+<li>rmdir()一定要目录为空，先遍历删除目录内的文件</li>
+</ul>
+<h4 id="目录创建"><a href="#目录创建" class="headerlink" title="目录创建"></a>目录创建</h4><ul>
+<li>mkdir()</li>
+</ul>
+<hr>
+<h3 id="其他函数"><a href="#其他函数" class="headerlink" title="其他函数"></a>其他函数</h3><h4 id="文件大小"><a href="#文件大小" class="headerlink" title="文件大小"></a>文件大小</h4><ul>
+<li>filesize()</li>
+<li>目录大小只能遍历计算</li>
+</ul>
+<h4 id="目录大小"><a href="#目录大小" class="headerlink" title="目录大小"></a>目录大小</h4><ul>
+<li>disk_free_space()</li>
+<li>dis_total_space()</li>
+</ul>
+<h4 id="文件拷贝"><a href="#文件拷贝" class="headerlink" title="文件拷贝"></a>文件拷贝</h4><ul>
+<li>copy()</li>
+</ul>
+<h4 id="删除文件"><a href="#删除文件" class="headerlink" title="删除文件"></a>删除文件</h4><ul>
+<li>unlink()</li>
+</ul>
+<h4 id="文件类型"><a href="#文件类型" class="headerlink" title="文件类型"></a>文件类型</h4><ul>
+<li>filetype() file, dir</li>
+</ul>
+<h4 id="重命名或目录"><a href="#重命名或目录" class="headerlink" title="重命名或目录"></a>重命名或目录</h4><ul>
+<li>rename()跟Linux的mv类似</li>
+</ul>
+<h4 id="文件截取"><a href="#文件截取" class="headerlink" title="文件截取"></a>文件截取</h4><ul>
+<li>ftruncate()</li>
+</ul>
+<h4 id="文件属性"><a href="#文件属性" class="headerlink" title="文件属性"></a>文件属性</h4><ul>
+<li>file_exists()</li>
+<li>is_readable()</li>
+<li>is_writable()</li>
+<li>is_executable()</li>
+<li>filectime()</li>
+<li>fileatime()</li>
+<li>filemtime()</li>
+</ul>
+<h4 id="文件锁"><a href="#文件锁" class="headerlink" title="文件锁"></a>文件锁</h4><ul>
+<li>flock()</li>
+</ul>
+<h4 id="文件指针"><a href="#文件指针" class="headerlink" title="文件指针"></a>文件指针</h4><ul>
+<li>ftell()</li>
+<li>fseek()</li>
+<li>rewind()</li>
+</ul>
+
+      
+    </div>
+
+  </div>
+
+  <div class="article-footer">
+    <div class="article-meta pull-left">
+
+    
+
+    
+
+    </div>
+
+    
+  </div>
+</article>
+
+
+    </main>
+
+    <footer class="site-footer">
+  <p class="site-info">
+    Proudly powered by <a href="https://hexo.io/" target="_blank">Hexo</a> and
+    Theme by <a href="https://github.com/CodeDaraW/Hacker" target="_blank">Hacker</a>
+    <br>
+    
+    &copy; 2019 Zithan
+    
+  </p>
+</footer>
+    
+  </div>
+</div>
+</body>
+</html>

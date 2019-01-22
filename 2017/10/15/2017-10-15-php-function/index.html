@@ -1,0 +1,160 @@
+<!DOCTYPE HTML>
+<html>
+<head><meta name="generator" content="Hexo 3.8.0">
+  <meta charset="utf-8">
+  
+  <title>PHP自定义函数和内置函数 | Zithan | for (;;) {学习, 总结, 提炼, 分享}</title>
+
+  
+  <meta name="author" content="Zithan">
+  
+
+  
+  <meta name="description" content="变量的作用域和静态变量1.函数体内使用global或$GLOBAL全局数组引用全局变量2.静态变量static
+
+1.仅初始化一次2.初始时需要赋值3.每次执行函数该值会保留4.static修饰的变量是局部的，仅在函数内部有效5.可以记录函数的调佣次数，从而可以在某些条件下终止递归。
+
+函数的参数及">
+  
+
+  
+  
+  <meta name="keywords" content="">
+  
+
+  <meta id="viewport" name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, minimum-scale=1, user-scalable=no, minimal-ui">
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-status-bar-style" content="black">
+
+  <meta property="og:title" content="PHP自定义函数和内置函数">
+
+  <meta property="og:site_name" content="Zithan">
+
+  
+  <meta property="og:image" content="/favicon.ico">
+  
+
+  <link href="/favicon.ico" rel="icon">
+  <link rel="alternate" href="/atom.xml" title="Zithan" type="application/atom+xml">
+  <link rel="stylesheet" href="/css/style.css" media="screen" type="text/css">
+</head>
+
+
+<body>
+<div class="blog">
+  <div class="content">
+
+    <header>
+  <div class="site-branding">
+    <h1 class="site-title">
+      <a href="/">Zithan</a>
+    </h1>
+    <p class="site-description">for (;;) {学习, 总结, 提炼, 分享}</p>
+  </div>
+  <nav class="site-navigation">
+    <ul>
+      
+        <li><a href="/">主页</a></li>
+      
+        <li><a href="/archives">归档</a></li>
+      
+    </ul>
+  </nav>
+</header>
+
+    <main class="site-main posts-loop">
+    <article>
+
+  
+    
+    <h3 class="article-title"><span>PHP自定义函数和内置函数</span></h3>
+    
+  
+
+  <div class="article-top-meta">
+    <span class="posted-on">
+      <a href="/2017/10/15/2017-10-15-php-function/" rel="bookmark">
+        <time class="entry-date published" datetime="2017-10-15T13:13:35.000Z">
+          2017-10-15
+        </time>
+      </a>
+    </span>
+  </div>
+
+
+  
+
+  <div class="article-content">
+    <div class="entry">
+      
+        <h4 id="变量的作用域和静态变量"><a href="#变量的作用域和静态变量" class="headerlink" title="变量的作用域和静态变量"></a>变量的作用域和静态变量</h4><p>1.函数体内使用global或$GLOBAL全局数组引用全局变量<br>2.静态变量static</p>
+<blockquote>
+<p>1.仅初始化一次<br>2.初始时需要赋值<br>3.每次执行函数该值会保留<br>4.static修饰的变量是局部的，仅在函数内部有效<br>5.可以记录函数的调佣次数，从而可以在某些条件下终止递归。</p>
+</blockquote>
+<h4 id="函数的参数及参数的引用传递"><a href="#函数的参数及参数的引用传递" class="headerlink" title="函数的参数及参数的引用传递"></a>函数的参数及参数的引用传递</h4><blockquote>
+<p>1.默认情况下，函数的参数通过值传递<br>2.如果希望允许函数修改它的值，必须通过引用传递参数</p>
+</blockquote>
+<h4 id="函数的返回值及引用返回"><a href="#函数的返回值及引用返回" class="headerlink" title="函数的返回值及引用返回"></a>函数的返回值及引用返回</h4><blockquote>
+<p>1.值通过使用可选的返回语句return返回<br>2.可以返回包括数组和对象的任意类型<br>3.返回语句终止函数执行，将控制权交回函数调用处<br>4.省略return,返回值为NULL，不可返回多个值(可采用数组形式)</p>
+</blockquote>
+<ul>
+<li>从函数返回一个引用，必须在函数声明和指派返回值给一个变量时都使用引用运算符&amp;</li>
+</ul>
+<h4 id="外部文件的导入"><a href="#外部文件的导入" class="headerlink" title="外部文件的导入"></a>外部文件的导入</h4><ul>
+<li>include/require语句包含并运行指定文件</li>
+<li>如果给出路径名按照路径来找，否则从include_path中查找，如果Include_path中也没有，则从条用脚本文件所在目录和当前工作目录下寻找</li>
+<li>当一个文件被包含时，其中所包含的代码继承了include所在行的变量范围（代码复制过来）</li>
+<li>加载过程找不到文件,include警告，require致命错误，</li>
+<li>require在出错是产生E_COMPLIME_ERROR级别的错误，导致脚本中止，include出错是产生E_WARNING警告，脚本继续运行</li>
+</ul>
+<h4 id="系统内置函数"><a href="#系统内置函数" class="headerlink" title="系统内置函数"></a>系统内置函数</h4><ul>
+<li><p>时间日期函数<br>date() strtotime() mktime() time() microtime() date_default_timezone_set()</p>
+</li>
+<li><p>iP处理函数<br>ip2long() long2ip()</p>
+</li>
+<li><p>打印处理<br>print()  echo printf()  sprintf() print_r()  var_dump() var_export()<br>print()和echo都为语言结构，echo可以打印多个值，逗号隔开<br>printf与sprintf<br>print_r与var_dump</p>
+</li>
+<li><p>序列化和发序列化韩硕<br>serialize() unserialize()</p>
+</li>
+<li><p>字符串处理函数<br>implode() explode() join() strrev() trim() ltrim() rtrim() strstr() number_format() strpos()…</p>
+</li>
+<li><p>数组处理函数<br>array_rand() array_keys() array_values() 差集array_diff() 交集array_intersect() 合集array_merge() array_shift() array_unshift() array_pop() array_push sort()等排序…</p>
+</li>
+</ul>
+<h4 id="可变函数，变量值—-gt-函数名"><a href="#可变函数，变量值—-gt-函数名" class="headerlink" title="可变函数，变量值—&gt;函数名"></a>可变函数，变量值—&gt;函数名</h4>
+      
+    </div>
+
+  </div>
+
+  <div class="article-footer">
+    <div class="article-meta pull-left">
+
+    
+
+    
+
+    </div>
+
+    
+  </div>
+</article>
+
+
+    </main>
+
+    <footer class="site-footer">
+  <p class="site-info">
+    Proudly powered by <a href="https://hexo.io/" target="_blank">Hexo</a> and
+    Theme by <a href="https://github.com/CodeDaraW/Hacker" target="_blank">Hacker</a>
+    <br>
+    
+    &copy; 2019 Zithan
+    
+  </p>
+</footer>
+    
+  </div>
+</div>
+</body>
+</html>

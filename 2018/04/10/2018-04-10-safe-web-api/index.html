@@ -1,0 +1,214 @@
+<!DOCTYPE HTML>
+<html>
+<head><meta name="generator" content="Hexo 3.8.0">
+  <meta charset="utf-8">
+  
+  <title>Web API的安全 | Zithan | for (;;) {学习, 总结, 提炼, 分享}</title>
+
+  
+  <meta name="author" content="Zithan">
+  
+
+  
+  <meta name="description" content="非法获取服务器和客户端通信中的信息
+数据分组嗅探
+
+会话劫持
+
+FireSheep进行会话劫持(Firefox插件)
+
+
+https
+
+HSTS限制只能https方式访问)
+中间人攻击（MITM）
+利用ettercap工具发动中间人攻击
+核对证书可信-&amp;gt;验证证书有效期–&amp;gt;检查服务器证书提示的通用名–&amp;gt;实际连接的目标服务器是否一致
+Certificate and PUblic Key Pinning机制(OWASP官网给出各个语言实现的方案)">
+  
+
+  
+  
+  <meta name="keywords" content="">
+  
+
+  <meta id="viewport" name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, minimum-scale=1, user-scalable=no, minimal-ui">
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-status-bar-style" content="black">
+
+  <meta property="og:title" content="Web API的安全">
+
+  <meta property="og:site_name" content="Zithan">
+
+  
+  <meta property="og:image" content="/favicon.ico">
+  
+
+  <link href="/favicon.ico" rel="icon">
+  <link rel="alternate" href="/atom.xml" title="Zithan" type="application/atom+xml">
+  <link rel="stylesheet" href="/css/style.css" media="screen" type="text/css">
+</head>
+
+
+<body>
+<div class="blog">
+  <div class="content">
+
+    <header>
+  <div class="site-branding">
+    <h1 class="site-title">
+      <a href="/">Zithan</a>
+    </h1>
+    <p class="site-description">for (;;) {学习, 总结, 提炼, 分享}</p>
+  </div>
+  <nav class="site-navigation">
+    <ul>
+      
+        <li><a href="/">主页</a></li>
+      
+        <li><a href="/archives">归档</a></li>
+      
+    </ul>
+  </nav>
+</header>
+
+    <main class="site-main posts-loop">
+    <article>
+
+  
+    
+    <h3 class="article-title"><span>Web API的安全</span></h3>
+    
+  
+
+  <div class="article-top-meta">
+    <span class="posted-on">
+      <a href="/2018/04/10/2018-04-10-safe-web-api/" rel="bookmark">
+        <time class="entry-date published" datetime="2018-04-10T14:15:47.000Z">
+          2018-04-10
+        </time>
+      </a>
+    </span>
+  </div>
+
+
+  
+
+  <div class="article-content">
+    <div class="entry">
+      
+        <h3 id="非法获取服务器和客户端通信中的信息"><a href="#非法获取服务器和客户端通信中的信息" class="headerlink" title="非法获取服务器和客户端通信中的信息"></a>非法获取服务器和客户端通信中的信息</h3><ol>
+<li><p>数据分组嗅探</p>
+</li>
+<li><p>会话劫持</p>
+<ul>
+<li>FireSheep进行会话劫持(Firefox插件)</li>
+</ul>
+</li>
+<li><p>https</p>
+<ul>
+<li>HSTS限制只能https方式访问)</li>
+<li>中间人攻击（MITM）</li>
+<li>利用ettercap工具发动中间人攻击</li>
+<li>核对证书可信-&gt;验证证书有效期–&gt;检查服务器证书提示的通用名–&gt;实际连接的目标服务器是否一致</li>
+<li>Certificate and PUblic Key Pinning机制(OWASP官网给出各个语言实现的方案)</li>
+</ul>
+</li>
+</ol>
+<a id="more"></a>
+<h3 id="使用浏览器访问API时的问题"><a href="#使用浏览器访问API时的问题" class="headerlink" title="使用浏览器访问API时的问题"></a>使用浏览器访问API时的问题</h3><ol>
+<li><p>XSS</p>
+<ul>
+<li>头部Content-Type: application/json</li>
+<li>IE的Content Sniffering会忽略Content-Type的声明</li>
+<li>使用X-Content-Type-Options: nosniff禁用（IE8以上版本）</li>
+<li>对JSON的字符串进行转义</li>
+</ul>
+</li>
+<li><p>XSRF</p>
+<ul>
+<li>禁用GET方法修改服务端的数据</li>
+<li>XSRF令牌（form表单不受同源策略影响）</li>
+<li>添加特殊的首部；e.g. X-Requested-With: XMLHttpRequest</li>
+</ul>
+</li>
+<li><p>JSON劫持</p>
+<ul>
+<li>同源策略无法适用于SCRIPT元素</li>
+<li><p>措施</p>
+<ul>
+<li>让JSON数据无法通过SCRIPT元素读取</li>
+<li>让浏览器准确识别JSON数据</li>
+<li><p>让JSON数据不能按javascript解释，或者在执行时无法读取数据</p>
+<pre><code>- 服务器返回JSON对象格式，不使用数组格式
+ - JSON文件最前面加入for(;;)无限循环
+</code></pre></li>
+</ul>
+</li>
+</ul>
+</li>
+</ol>
+<h3 id="思考防范恶意访问的对策"><a href="#思考防范恶意访问的对策" class="headerlink" title="思考防范恶意访问的对策"></a>思考防范恶意访问的对策</h3><ol>
+<li>修改参数</li>
+<li>请求再次发送</li>
+</ol>
+<h3 id="同安全相关的HTTP首部"><a href="#同安全相关的HTTP首部" class="headerlink" title="同安全相关的HTTP首部"></a>同安全相关的HTTP首部</h3><ol>
+<li>X-Content-Type-Options: nosniff</li>
+<li>X-XSS-Protection: 1; mode=block</li>
+<li>点击劫持：X-Frame-Options: deny</li>
+<li>Content-Security-Policy: default-src ‘’</li>
+<li>Strict-Transport-Security: max-age=15768000</li>
+<li>Public-Key-Pins(HPKP)</li>
+<li>Set-Cookie: HttpOnly限制只能通过http通信不能使用js等脚本访问</li>
+</ol>
+<h3 id="应对大规模访问的对策"><a href="#应对大规模访问的对策" class="headerlink" title="应对大规模访问的对策"></a>应对大规模访问的对策</h3><ol>
+<li>限制每个用户的访问</li>
+<li>限速的单位</li>
+<li>应对超出上限值的情况（429 Too Many Requests）</li>
+<li>向用户告知访问限速的信息<ul>
+<li>通过HTTP响应来传递限速信息<ul>
+<li>X-RateLimit-Limit</li>
+<li>X-RateLimit-Remaining</li>
+<li>X-RateLimit-Reset</li>
+</ul>
+</li>
+</ul>
+</li>
+</ol>
+
+      
+    </div>
+
+  </div>
+
+  <div class="article-footer">
+    <div class="article-meta pull-left">
+
+    
+
+    
+
+    </div>
+
+    
+  </div>
+</article>
+
+
+    </main>
+
+    <footer class="site-footer">
+  <p class="site-info">
+    Proudly powered by <a href="https://hexo.io/" target="_blank">Hexo</a> and
+    Theme by <a href="https://github.com/CodeDaraW/Hacker" target="_blank">Hacker</a>
+    <br>
+    
+    &copy; 2019 Zithan
+    
+  </p>
+</footer>
+    
+  </div>
+</div>
+</body>
+</html>

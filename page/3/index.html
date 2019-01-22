@@ -1,0 +1,798 @@
+<!DOCTYPE HTML>
+<html>
+<head><meta name="generator" content="Hexo 3.8.0">
+  <meta charset="utf-8">
+  
+  <title>第 3 页 | Zithan | for (;;) {学习, 总结, 提炼, 分享}</title>
+
+  
+  <meta name="author" content="Zithan">
+  
+
+  
+
+  
+
+  <meta id="viewport" name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, minimum-scale=1, user-scalable=no, minimal-ui">
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-status-bar-style" content="black">
+
+  
+
+  <meta property="og:site_name" content="Zithan">
+
+  
+  <meta property="og:image" content="/favicon.ico">
+  
+
+  <link href="/favicon.ico" rel="icon">
+  <link rel="alternate" href="/atom.xml" title="Zithan" type="application/atom+xml">
+  <link rel="stylesheet" href="/css/style.css" media="screen" type="text/css">
+</head>
+
+
+<body>
+<div class="blog">
+  <div class="content">
+
+    <header>
+  <div class="site-branding">
+    <h1 class="site-title">
+      <a href="/">Zithan</a>
+    </h1>
+    <p class="site-description">for (;;) {学习, 总结, 提炼, 分享}</p>
+  </div>
+  <nav class="site-navigation">
+    <ul>
+      
+        <li><a href="/">主页</a></li>
+      
+        <li><a href="/archives">归档</a></li>
+      
+    </ul>
+  </nav>
+</header>
+
+    <main class="site-main posts-loop">
+    
+  <article>
+
+  
+    
+    <h3 class="article-title"><a href="/2017/10/15/2017-10-15-regExp/"><span>正则表达式</span></a></h3>
+    
+  
+
+  <div class="article-top-meta">
+    <span class="posted-on">
+      <a href="/2017/10/15/2017-10-15-regExp/" rel="bookmark">
+        <time class="entry-date published" datetime="2017-10-15T12:04:58.000Z">
+          2017-10-15
+        </time>
+      </a>
+    </span>
+  </div>
+
+
+  
+
+  <div class="article-content">
+    <div class="entry">
+      
+        <ul>
+<li>作用：分割、查找、匹配、替换字符串</li>
+<li>分隔符：正斜线(/)、hash符号(#)、取反符号(~)</li>
+<li>通用原子：\d, \D, \w, \W, \s, \S</li>
+<li>元字符：. * ? ^ $ + {n} {n,} {n,m} [] () [^] | [-]</li>
+<li>模式修正符：i m e(php7.0已删除) s U x A D u</li>
+<li>后向引用</li>
+<li>贪婪模式</li>
+<li>正则表达式PCRE函数：preg_match()、preg_match_all()、preg_replace()、preg_split()</li>
+<li>中文匹配：UTF-8汉字编码范围是0x4e00-0x9fa5，在ANSI(gb2312)环境下，0xb0-0xf7，0xa1-oxfe</li>
+<li>UTF-8要使用<strong>u模式修正符</strong>使模式字符串被当成UTF-8，在ANSI(gb2312)环境下，<strong>要使用chr函数将ASCII码转换为字符</strong></li>
+</ul>
+
+      
+    </div>
+
+  </div>
+
+  <div class="article-footer">
+    <div class="article-meta pull-left">
+
+    
+
+    
+
+    </div>
+
+    
+  </div>
+</article>
+
+
+
+  <article>
+
+  
+    
+    <h3 class="article-title"><a href="/2017/10/15/2017-10-15-file-dir-php/"><span>PHP文件和目录操作</span></a></h3>
+    
+  
+
+  <div class="article-top-meta">
+    <span class="posted-on">
+      <a href="/2017/10/15/2017-10-15-file-dir-php/" rel="bookmark">
+        <time class="entry-date published" datetime="2017-10-15T08:02:32.000Z">
+          2017-10-15
+        </time>
+      </a>
+    </span>
+  </div>
+
+
+  
+
+  <div class="article-content">
+    <div class="entry">
+      
+        <h2 id="文件读取-写入操作"><a href="#文件读取-写入操作" class="headerlink" title="文件读取/写入操作"></a>文件读取/写入操作</h2><h3 id="文件的操作"><a href="#文件的操作" class="headerlink" title="文件的操作"></a>文件的操作</h3><h4 id="打开"><a href="#打开" class="headerlink" title="打开"></a>打开</h4><ul>
+<li>fopen()<br>用来打开一个文件，打开时需要指定打开模式<br>打开模式：r/r+（指针在开头，但是加入的内容后向后替代相等字符串长度）、w/w+、a/a+、x/x+、（b、t配合前面几个使用）</li>
+</ul>
+<h4 id="写入"><a href="#写入" class="headerlink" title="写入"></a>写入</h4><ul>
+<li>fwrite()</li>
+<li>fputs()</li>
+</ul>
+<h4 id="读取"><a href="#读取" class="headerlink" title="读取"></a>读取</h4><ul>
+<li>fread()</li>
+<li>fgets()获取一行</li>
+<li>fgetc()获取一个字符</li>
+</ul>
+<h4 id="关闭"><a href="#关闭" class="headerlink" title="关闭"></a>关闭</h4><ul>
+<li>fclose()</li>
+</ul>
+<h4 id="不需要fopen-的函数"><a href="#不需要fopen-的函数" class="headerlink" title="不需要fopen()的函数"></a>不需要fopen()的函数</h4><ul>
+<li>file_get_contents()</li>
+<li>file_put_contents()</li>
+</ul>
+<h4 id="其他读取函数哦"><a href="#其他读取函数哦" class="headerlink" title="其他读取函数哦"></a>其他读取函数哦</h4><ul>
+<li>file()</li>
+<li>readfile()</li>
+</ul>
+<hr>
+<h4 id="远程访问文件"><a href="#远程访问文件" class="headerlink" title="远程访问文件"></a>远程访问文件</h4><ul>
+<li>开启allow_url_fopen， HTTP协议连接只能使用只读，ftp协议可以使用只读或只写</li>
+</ul>
+<h3 id="目录相关的操作"><a href="#目录相关的操作" class="headerlink" title="目录相关的操作"></a>目录相关的操作</h3><h4 id="名称相关"><a href="#名称相关" class="headerlink" title="名称相关"></a>名称相关</h4><ul>
+<li>basename()</li>
+<li>dirname()</li>
+<li>pathinfo()</li>
+</ul>
+<h4 id="目录读取"><a href="#目录读取" class="headerlink" title="目录读取"></a>目录读取</h4><ul>
+<li>opendir()</li>
+<li>readdir()</li>
+<li>closedir()</li>
+<li>rewinddir()</li>
+</ul>
+<h4 id="目录删除"><a href="#目录删除" class="headerlink" title="目录删除"></a>目录删除</h4><ul>
+<li>rmdir()一定要目录为空，先遍历删除目录内的文件</li>
+</ul>
+<h4 id="目录创建"><a href="#目录创建" class="headerlink" title="目录创建"></a>目录创建</h4><ul>
+<li>mkdir()</li>
+</ul>
+<hr>
+<h3 id="其他函数"><a href="#其他函数" class="headerlink" title="其他函数"></a>其他函数</h3><h4 id="文件大小"><a href="#文件大小" class="headerlink" title="文件大小"></a>文件大小</h4><ul>
+<li>filesize()</li>
+<li>目录大小只能遍历计算</li>
+</ul>
+<h4 id="目录大小"><a href="#目录大小" class="headerlink" title="目录大小"></a>目录大小</h4><ul>
+<li>disk_free_space()</li>
+<li>dis_total_space()</li>
+</ul>
+<h4 id="文件拷贝"><a href="#文件拷贝" class="headerlink" title="文件拷贝"></a>文件拷贝</h4><ul>
+<li>copy()</li>
+</ul>
+<h4 id="删除文件"><a href="#删除文件" class="headerlink" title="删除文件"></a>删除文件</h4><ul>
+<li>unlink()</li>
+</ul>
+<h4 id="文件类型"><a href="#文件类型" class="headerlink" title="文件类型"></a>文件类型</h4><ul>
+<li>filetype() file, dir</li>
+</ul>
+<h4 id="重命名或目录"><a href="#重命名或目录" class="headerlink" title="重命名或目录"></a>重命名或目录</h4><ul>
+<li>rename()跟Linux的mv类似</li>
+</ul>
+<h4 id="文件截取"><a href="#文件截取" class="headerlink" title="文件截取"></a>文件截取</h4><ul>
+<li>ftruncate()</li>
+</ul>
+<h4 id="文件属性"><a href="#文件属性" class="headerlink" title="文件属性"></a>文件属性</h4><ul>
+<li>file_exists()</li>
+<li>is_readable()</li>
+<li>is_writable()</li>
+<li>is_executable()</li>
+<li>filectime()</li>
+<li>fileatime()</li>
+<li>filemtime()</li>
+</ul>
+<h4 id="文件锁"><a href="#文件锁" class="headerlink" title="文件锁"></a>文件锁</h4><ul>
+<li>flock()</li>
+</ul>
+<h4 id="文件指针"><a href="#文件指针" class="headerlink" title="文件指针"></a>文件指针</h4><ul>
+<li>ftell()</li>
+<li>fseek()</li>
+<li>rewind()</li>
+</ul>
+
+      
+    </div>
+
+  </div>
+
+  <div class="article-footer">
+    <div class="article-meta pull-left">
+
+    
+
+    
+
+    </div>
+
+    
+  </div>
+</article>
+
+
+
+  <article>
+
+  
+    
+    <h3 class="article-title"><a href="/2017/10/15/2017-10-15-php-evn-config/"><span>PHP开发环境及配置</span></a></h3>
+    
+  
+
+  <div class="article-top-meta">
+    <span class="posted-on">
+      <a href="/2017/10/15/2017-10-15-php-evn-config/" rel="bookmark">
+        <time class="entry-date published" datetime="2017-10-15T07:51:15.000Z">
+          2017-10-15
+        </time>
+      </a>
+    </span>
+  </div>
+
+
+  
+
+  <div class="article-content">
+    <div class="entry">
+      
+        <h3 id="版本控制"><a href="#版本控制" class="headerlink" title="版本控制"></a>版本控制</h3><ul>
+<li><p>集中式：CVS &amp; SVN</p>
+<blockquote>
+<p>版本信息储存在中央服务器中，需要网络</p>
+</blockquote>
+</li>
+<li><p>分布式：git</p>
+<blockquote>
+<p>容灾性更好</p>
+</blockquote>
+</li>
+</ul>
+<hr>
+<h3 id="PHP的运行原理"><a href="#PHP的运行原理" class="headerlink" title="PHP的运行原理"></a>PHP的运行原理</h3><ul>
+<li>CGI —&gt;  fastCGI —&gt; PHP-FPM</li>
+<li>CGI是服务器和PHP的解析器的桥梁</li>
+<li>fastCGI是CGI的改良版本</li>
+<li>PHP-FPM是fastCGI的实行，一个master,多个worker进程</li>
+</ul>
+<h3 id="PHP的常用配置（10）"><a href="#PHP的常用配置（10）" class="headerlink" title="PHP的常用配置（10）"></a>PHP的常用配置（10）</h3><p>register_globals<br>allow_url_fopen<br>allow_url_include<br>data.timezone<br>display_errors<br>error_reporting<br>safe_mode<br>upload_max_filesize<br>max_file_uploads<br>post_max_size</p>
+
+      
+    </div>
+
+  </div>
+
+  <div class="article-footer">
+    <div class="article-meta pull-left">
+
+    
+
+    
+
+    </div>
+
+    
+  </div>
+</article>
+
+
+
+  <article>
+
+  
+    
+    <h3 class="article-title"><a href="/2017/10/13/2017-10-13-http-tcp/"><span>网络协议</span></a></h3>
+    
+  
+
+  <div class="article-top-meta">
+    <span class="posted-on">
+      <a href="/2017/10/13/2017-10-13-http-tcp/" rel="bookmark">
+        <time class="entry-date published" datetime="2017-10-13T08:41:53.000Z">
+          2017-10-13
+        </time>
+      </a>
+    </span>
+  </div>
+
+
+  
+
+  <div class="article-content">
+    <div class="entry">
+      
+        <ul>
+<li>http协议状态码<blockquote>
+</blockquote>
+1XX：信息状态码<br>2XX：成功状态码<br>3XX：重定向状态码<br>4XX：客户端错误状态码<br>5XX：服务器错误状态码<br>常见的状态码：200，204，206，301，302， 303， 304， 307， 400， 401，403， 404， 500，503；</li>
+<li>tcp/ip 5层和OSI七层模型<blockquote>
+<p>OSI七层模型<br>物理层、数据链路层、网络层、传输层、会话层、表示层、应用层</p>
+</blockquote>
+</li>
+<li>http协议的工作特点和原理 http1.0 http1.1 http2.0<blockquote>
+<p>特点<br>基于B/S模式<br>通信开销小、简单快速、传输成本低<br>使用灵活、可使用超文本传输协议<br>节省传输时间<br>无状态</p>
+</blockquote>
+</li>
+</ul>
+<blockquote>
+<p>原理<br>客户端发送请求给服务器，创建一个TCP连接，指定端口号，默认80，连接到服务器，服务器监听浏览器请求，一旦监听到客户端请求，分析请求类型后，服务器会向客户端返回状态信息和数据内容。</p>
+</blockquote>
+<ul>
+<li>http协议常见的请求/响应头和请求方法<br>Content-Type<br>Accept<br>Origin<br>Cooke<br>Cache-Control<br>User-Agent<br>Referrer<br>X-Forwarded-For<br>Access-Control-Allow-Origin<br>Last_-Modified</li>
+</ul>
+<p>请求方法（7）：<br>GET<br>POST<br>HEAD<br>OPTIONS<br>PUT<br>DELETE<br>TRACE</p>
+<p>GET和POST区别：<br>刷新-无害有害<br>书签<br>缓存<br>request body<br>浏览器历史<br>长度(取决于浏览器)<br>数据类型<br>安全性</p>
+<ul>
+<li>https协议的工作原理<blockquote>
+<p>https是一种基于SSL/TLS的http协议，所有的http数据都是在SSL/TLS协议封装之上传输的。<br>HTTPS协议在HTTP协议的基础之上，添加了ssl/tls握手以及数据加密协议，也属于应用层协议。</p>
+</blockquote>
+</li>
+</ul>
+<p>常见网络协议含义及端口<br>ftp:21<br>telnet:23<br>smtp:25<br>pop3:110<br>http:80<br>dns: 53</p>
+
+      
+    </div>
+
+  </div>
+
+  <div class="article-footer">
+    <div class="article-meta pull-left">
+
+    
+
+    
+
+    </div>
+
+    
+  </div>
+</article>
+
+
+
+  <article>
+
+  
+    
+    <h3 class="article-title"><a href="/2017/10/13/2017-10-13-mysql-storage-engine/"><span>mysql-storage-engine</span></a></h3>
+    
+  
+
+  <div class="article-top-meta">
+    <span class="posted-on">
+      <a href="/2017/10/13/2017-10-13-mysql-storage-engine/" rel="bookmark">
+        <time class="entry-date published" datetime="2017-10-13T07:23:09.000Z">
+          2017-10-13
+        </time>
+      </a>
+    </span>
+  </div>
+
+
+  
+
+  <div class="article-content">
+    <div class="entry">
+      
+        <h2 id="Mysql存储引擎"><a href="#Mysql存储引擎" class="headerlink" title="Mysql存储引擎"></a>Mysql存储引擎</h2><h3 id="有哪些"><a href="#有哪些" class="headerlink" title="有哪些"></a>有哪些</h3><h3 id="mysql存储引擎MyISAM和InnoDB的区别"><a href="#mysql存储引擎MyISAM和InnoDB的区别" class="headerlink" title="mysql存储引擎MyISAM和InnoDB的区别"></a>mysql存储引擎MyISAM和InnoDB的区别</h3><ol>
+<li>MyISAM类型不支持事务处理等高级处理，而InnoDB类型支持.</li>
+</ol>
+<ul>
+<li>MyISAM类型的表强调的是性能，其执行数度比InnoDB类型更快.</li>
+<li>InnoDB不支持FULLTEXT类型的索引.</li>
+<li>InnoDB中不保存表的具体行数，也就是说，执行<code>select count(*) from table</code>时，InnoDB要扫描一遍整个表来计算有多少行，但是MyISAM只要简单的读出保存好的行数即可.</li>
+<li>对于AUTO_INCREMENT类型的字段，InnoDB中必须包含只有该字段的索引，但是在MyISAM表中，可以和其他字段一起建立联合索引。</li>
+<li>DELETE FROM table时，InnoDB不会重新建立表，而是一行一行的删除。</li>
+<li>LOAD TABLE FROM MASTER操作对InnoDB是不起作用的，解决方法是首先把InnoDB表改成MyISAM表，导入数据后再改成InnoDB表，但是对于使用的额外的InnoDB特性(例如外键)的表不适用.</li>
+<li>MyISAM支持表锁，InnoDB支持行锁。</li>
+</ul>
+
+      
+    </div>
+
+  </div>
+
+  <div class="article-footer">
+    <div class="article-meta pull-left">
+
+    
+
+    
+
+    </div>
+
+    
+  </div>
+</article>
+
+
+
+  <article>
+
+  
+    
+    <h3 class="article-title"><a href="/2017/10/12/2017-10-12-cookie-session/"><span>会话控制技术</span></a></h3>
+    
+  
+
+  <div class="article-top-meta">
+    <span class="posted-on">
+      <a href="/2017/10/12/2017-10-12-cookie-session/" rel="bookmark">
+        <time class="entry-date published" datetime="2017-10-12T01:32:00.000Z">
+          2017-10-12
+        </time>
+      </a>
+    </span>
+  </div>
+
+
+  
+
+  <div class="article-content">
+    <div class="entry">
+      
+        <h2 id="Cookie"><a href="#Cookie" class="headerlink" title="Cookie"></a>Cookie</h2><h4 id="操作"><a href="#操作" class="headerlink" title="操作"></a>操作</h4><blockquote>
+<p>写操作：setcookie();<br>读操作：<figure class="highlight plain"><figcaption><span>```  只读</span></figcaption><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line">&gt; 删除操作：setcookie()的expire过期时间time()-1000</span><br><span class="line"></span><br><span class="line">#### Cookie优缺点</span><br><span class="line">保存在客户端</span><br><span class="line"></span><br><span class="line">---</span><br><span class="line"></span><br><span class="line">## session</span><br><span class="line"></span><br><span class="line">- session_start</span><br></pre></td></tr></table></figure></p>
+</blockquote>
+<p>$_SESSION;<br>$_SESSION = [];<br>session_destroy()<br><code>`</code></p>
+<h3 id="session-配置"><a href="#session-配置" class="headerlink" title="session 配置"></a>session 配置</h3><ul>
+<li><p>php.ini<br>session.auto_start<br>sesson.cookie_domain<br>session.cookie_lifetime<br>session.cookie_path<br>session.name默认PHPSESSIONID<br>eg. $aaaa= session.name() = session.id();<br>SID = $aaa; 如果开启了cookie，SID为空，反之<br>session.save_path<br>session.use_cookies<br>session.use_trans_sid</p>
+</li>
+<li><p>session.gc_probability = 1<br>session.gc_divisor = 100<br>session.gc_maxlifetime = 1440</p>
+</li>
+<li><p>session.save_handler   eg.redis;mc;mysql;</p>
+</li>
+<li>session_set_save_handler();<br>zithan++ LVS</li>
+</ul>
+<h2 id="session优缺点"><a href="#session优缺点" class="headerlink" title="session优缺点"></a>session优缺点</h2><p>保存在服务器<br>服务器存储越来越大</p>
+<hr>
+<h2 id="cookie和session的区别"><a href="#cookie和session的区别" class="headerlink" title="cookie和session的区别"></a>cookie和session的区别</h2><ol>
+<li>储存角度：cookie保存在客户端的内存(会话cookie)和硬盘(持久cookie)，而session保存在服务器的内存、文件(默认)、数据库；</li>
+</ol>
+<ul>
+<li>安全角度：session虽然对客户不可见，但是必须依赖cookie保存sessionID或者url传参数，所以session和cookie本质上一样</li>
+<li>保存内容的类型和大小：cookie只能保存字符串类型以及可以自动转换成字符串的类型，大小有限制；session可以保存其他类型，理论上大小无限制。</li>
+</ul>
+
+      
+    </div>
+
+  </div>
+
+  <div class="article-footer">
+    <div class="article-meta pull-left">
+
+    
+
+    
+    
+
+    <span class="post-tags">
+      <i class="icon-tags"></i>
+        <a href="/tags/php-cookie-session/">php cookie session</a>
+    </span>
+    
+
+    </div>
+
+    
+  </div>
+</article>
+
+
+
+  <article>
+
+  
+    
+    <h3 class="article-title"><a href="/2017/10/11/2017-10-11-oop/"><span>PHP 面向对象编程</span></a></h3>
+    
+  
+
+  <div class="article-top-meta">
+    <span class="posted-on">
+      <a href="/2017/10/11/2017-10-11-oop/" rel="bookmark">
+        <time class="entry-date published" datetime="2017-10-11T04:17:11.000Z">
+          2017-10-11
+        </time>
+      </a>
+    </span>
+  </div>
+
+
+  
+
+  <div class="article-content">
+    <div class="entry">
+      
+        <h2 id="基础"><a href="#基础" class="headerlink" title="基础"></a>基础</h2><ul>
+<li>public; protected; private</li>
+<li>封装；继承(php单一继承)；多态（抽象类，接口）；</li>
+<li>魔术方法(14)</li>
+<li>常用设计模式</li>
+</ul>
+<h2 id="面向对象编程的基本原则"><a href="#面向对象编程的基本原则" class="headerlink" title="面向对象编程的基本原则"></a>面向对象编程的基本原则</h2><h4 id="SOLID："><a href="#SOLID：" class="headerlink" title="SOLID："></a>SOLID：</h4><ol>
+<li><p>单一职责原则：</p>
+<blockquote>
+<p>简单来说就是一个类只负责一件事，怎么来实现这个，那就要职责的划分，而职责划分的粒度是根据需求粒度的不同而不同的，所以只有合适的设计，没有最好的设计；<br>单一原则是高内聚、低耦合的引申</p>
+</blockquote>
+</li>
+<li><p>开放关闭原则：</p>
+<blockquote>
+<p>对模块修改是关闭的，关闭对模块源代码的修改，对源代码进行修改存在很高的风险。<br>对模块的扩展是开放的，即系模块是以扩展的方式去应对需求的变化，就是面向抽象/接口编程<br>开闭原则提高了代码的复用性和易维护。</p>
+</blockquote>
+</li>
+<li><p>里氏替换原则</p>
+<blockquote>
+<p>定义：任何基类出现的地方，子类一定可以出现。<br>任何一个子类的实例都可以替换父类的实例，而功能不受影响<br>要遵循里氏替换原则， 需要保证子类在实现父类方法时，必须遵循父类的方法，而且不能重写父类已经定义的方法，可以这样理解继承中父类的关系：</p>
+</blockquote>
+</li>
+</ol>
+<ol start="4">
+<li>接口隔离原则</li>
+</ol>
+<blockquote>
+<p>不应该强行要求客户端依赖于它们不用的接口。<br>类之间的依赖应该建立在最小的接口上面。这里的最小取决于单一原则的职责划分粒度。</p>
+</blockquote>
+<ol start="5">
+<li>依赖倒置原则<blockquote>
+<p>高层模块不应该直接依赖于底层模块的具体实现，而应该依赖于底层的抽象。换言之，模块间的依赖是通过抽象发生，实现类之间不发生直接的依赖关系，其依赖关系是通过接口或抽象类产生的。<br>接口和抽象类不应该依赖于实现类，而实现类依赖接口或抽象类。</p>
+</blockquote>
+</li>
+</ol>
+<ul>
+<li>单一职责：一个类，只需要做好一件事情。</li>
+<li>开放封闭：一个类，应该是可扩展的，而不是可修改的。</li>
+<li>依赖倒置：一个类，不应该强依赖另一个类。每个类对于另一个类都是可替换的。</li>
+<li>配置化：尽可能地使用配置，而不是硬编码。</li>
+<li>面向接口编程：只需要关心接口，不需要关心实现。</li>
+</ul>
+
+      
+    </div>
+
+  </div>
+
+  <div class="article-footer">
+    <div class="article-meta pull-left">
+
+    
+
+    
+
+    </div>
+
+    
+  </div>
+</article>
+
+
+
+  <article>
+
+  
+    
+    <h3 class="article-title"><a href="/2017/10/10/2017-10-10-design-pattern/"><span>design_pattern</span></a></h3>
+    
+  
+
+  <div class="article-top-meta">
+    <span class="posted-on">
+      <a href="/2017/10/10/2017-10-10-design-pattern/" rel="bookmark">
+        <time class="entry-date published" datetime="2017-10-09T16:28:51.000Z">
+          2017-10-10
+        </time>
+      </a>
+    </span>
+  </div>
+
+
+  
+
+  <div class="article-content">
+    <div class="entry">
+      
+        <h3 id="php常见设计模式"><a href="#php常见设计模式" class="headerlink" title="php常见设计模式"></a>php常见设计模式</h3><ul>
+<li>工厂模式</li>
+<li>单例模式</li>
+<li>注册模式</li>
+</ul>
+<hr>
+<ul>
+<li>适配器模式</li>
+<li>策略模式</li>
+<li>数据对象映射模式</li>
+<li>观察者模式</li>
+<li>原型模式</li>
+<li>装饰器模式</li>
+<li>迭代器模式</li>
+<li>代理模式</li>
+</ul>
+
+      
+    </div>
+
+  </div>
+
+  <div class="article-footer">
+    <div class="article-meta pull-left">
+
+    
+
+    
+
+    </div>
+
+    
+  </div>
+</article>
+
+
+
+  <article>
+
+  
+    
+    <h3 class="article-title"><a href="/2017/09/30/2017-09-30-redis-install/"><span>redis-install</span></a></h3>
+    
+  
+
+  <div class="article-top-meta">
+    <span class="posted-on">
+      <a href="/2017/09/30/2017-09-30-redis-install/" rel="bookmark">
+        <time class="entry-date published" datetime="2017-09-30T13:19:57.000Z">
+          2017-09-30
+        </time>
+      </a>
+    </span>
+  </div>
+
+
+  
+
+  <div class="article-content">
+    <div class="entry">
+      
+        <ul>
+<li>到官网wget安装包</li>
+<li>确认系统安装gcc编译器和tcl语言</li>
+<li>tar -zxf * 解压Redis安装包</li>
+<li>make</li>
+<li>sudo make install</li>
+<li>启动redis-server</li>
+</ul>
+
+      
+    </div>
+
+  </div>
+
+  <div class="article-footer">
+    <div class="article-meta pull-left">
+
+    
+
+    
+
+    </div>
+
+    
+  </div>
+</article>
+
+
+
+  <article>
+
+  
+    
+    <h3 class="article-title"><a href="/2017/09/30/2017-09-30-php-redis-install/"><span>php-redis-install</span></a></h3>
+    
+  
+
+  <div class="article-top-meta">
+    <span class="posted-on">
+      <a href="/2017/09/30/2017-09-30-php-redis-install/" rel="bookmark">
+        <time class="entry-date published" datetime="2017-09-30T13:06:23.000Z">
+          2017-09-30
+        </time>
+      </a>
+    </span>
+  </div>
+
+
+  
+
+  <div class="article-content">
+    <div class="entry">
+      
+        <ul>
+<li>需要phpize、php-config,安装方法：yum install -y php-devel</li>
+<li>wget <a href="https://github.com/phpredis/phpredis/archive/master.zip" target="_blank" rel="noopener">https://github.com/phpredis/phpredis/archive/master.zip</a></li>
+<li>或<a href="https://github.com/phpredis/phpredis/archive/develop.zip" target="_blank" rel="noopener">https://github.com/phpredis/phpredis/archive/develop.zip</a></li>
+<li>unzip master.zip &amp;&amp; cd <em>**</em></li>
+<li>phpize</li>
+<li>./configure -with-php-config=/usr/bin/php-config</li>
+<li>make</li>
+<li>sudo make install</li>
+<li>cd /*/php.ini(查看php.ini位置用命令：php –ini)</li>
+<li>在Php.ini最后面添加extension=redis.so</li>
+<li>用Php -m 查看PHP安装的扩展模块</li>
+</ul>
+
+      
+    </div>
+
+  </div>
+
+  <div class="article-footer">
+    <div class="article-meta pull-left">
+
+    
+
+    
+
+    </div>
+
+    
+  </div>
+</article>
+
+
+
+
+<nav class="pagination">
+  
+  <a href="/page/2/" class="pagination-prev">上一页</a>
+  
+  
+  <a href="/page/4/" class="pagination-next">下一页</a>
+  
+</nav>
+    </main>
+
+    <footer class="site-footer">
+  <p class="site-info">
+    Proudly powered by <a href="https://hexo.io/" target="_blank">Hexo</a> and
+    Theme by <a href="https://github.com/CodeDaraW/Hacker" target="_blank">Hacker</a>
+    <br>
+    
+    &copy; 2019 Zithan
+    
+  </p>
+</footer>
+    
+  </div>
+</div>
+</body>
+</html>

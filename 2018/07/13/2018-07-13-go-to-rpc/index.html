@@ -1,0 +1,134 @@
+<!DOCTYPE HTML>
+<html>
+<head><meta name="generator" content="Hexo 3.8.0">
+  <meta charset="utf-8">
+  
+  <title>RPC的话痨 | Zithan | for (;;) {学习, 总结, 提炼, 分享}</title>
+
+  
+  <meta name="author" content="Zithan">
+  
+
+  
+  <meta name="description" content="stupid PM的需求越来越多，公司有了app端，wap端，pc端，app可能还分手机端，电视端等，这样系统就变得代码重合，臃肿了，不好维护了，密度耦合了，那怎么办呢，解耦了，这时候就需要拆分一个个子系统子模块，独立服务器，这样就叫拆分服务，也就有了微服务这个说法。
+
+
+数据交互传输方式：RPC，">
+  
+
+  
+  
+  <meta name="keywords" content="">
+  
+
+  <meta id="viewport" name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, minimum-scale=1, user-scalable=no, minimal-ui">
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-status-bar-style" content="black">
+
+  <meta property="og:title" content="RPC的话痨">
+
+  <meta property="og:site_name" content="Zithan">
+
+  
+  <meta property="og:image" content="/favicon.ico">
+  
+
+  <link href="/favicon.ico" rel="icon">
+  <link rel="alternate" href="/atom.xml" title="Zithan" type="application/atom+xml">
+  <link rel="stylesheet" href="/css/style.css" media="screen" type="text/css">
+</head>
+
+
+<body>
+<div class="blog">
+  <div class="content">
+
+    <header>
+  <div class="site-branding">
+    <h1 class="site-title">
+      <a href="/">Zithan</a>
+    </h1>
+    <p class="site-description">for (;;) {学习, 总结, 提炼, 分享}</p>
+  </div>
+  <nav class="site-navigation">
+    <ul>
+      
+        <li><a href="/">主页</a></li>
+      
+        <li><a href="/archives">归档</a></li>
+      
+    </ul>
+  </nav>
+</header>
+
+    <main class="site-main posts-loop">
+    <article>
+
+  
+    
+    <h3 class="article-title"><span>RPC的话痨</span></h3>
+    
+  
+
+  <div class="article-top-meta">
+    <span class="posted-on">
+      <a href="/2018/07/13/2018-07-13-go-to-rpc/" rel="bookmark">
+        <time class="entry-date published" datetime="2018-07-13T14:45:06.000Z">
+          2018-07-13
+        </time>
+      </a>
+    </span>
+  </div>
+
+
+  
+
+  <div class="article-content">
+    <div class="entry">
+      
+        <blockquote>
+<p>stupid PM的需求越来越多，公司有了app端，wap端，pc端，app可能还分手机端，电视端等，这样系统就变得代码重合，臃肿了，不好维护了，密度耦合了，那怎么办呢，解耦了，这时候就需要拆分一个个子系统子模块，独立服务器，这样就叫拆分服务，也就有了微服务这个说法。</p>
+</blockquote>
+<ul>
+<li><p>数据交互传输方式：RPC，HTTP，MQ，DB，Cache</p>
+</li>
+<li><p>Http相当于普通话，RPC相当于方言，前端和后端用HTTP交互，企业和企业间的产品也用通用的HTTP交互，因为http通用易开发，适合对外第三方的开发交互，而企业内部的SOA，更加追求高效简洁性，拆分出来的微服务层之间，可以使用方言即RPC，自定义的传输协议数据交互。</p>
+</li>
+</ul>
+
+      
+    </div>
+
+  </div>
+
+  <div class="article-footer">
+    <div class="article-meta pull-left">
+
+    
+
+    
+
+    </div>
+
+    
+  </div>
+</article>
+
+
+    </main>
+
+    <footer class="site-footer">
+  <p class="site-info">
+    Proudly powered by <a href="https://hexo.io/" target="_blank">Hexo</a> and
+    Theme by <a href="https://github.com/CodeDaraW/Hacker" target="_blank">Hacker</a>
+    <br>
+    
+    &copy; 2019 Zithan
+    
+  </p>
+</footer>
+    
+  </div>
+</div>
+</body>
+</html>

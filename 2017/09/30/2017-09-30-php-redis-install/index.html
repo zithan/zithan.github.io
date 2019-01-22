@@ -1,0 +1,137 @@
+<!DOCTYPE HTML>
+<html>
+<head><meta name="generator" content="Hexo 3.8.0">
+  <meta charset="utf-8">
+  
+  <title>php-redis-install | Zithan | for (;;) {学习, 总结, 提炼, 分享}</title>
+
+  
+  <meta name="author" content="Zithan">
+  
+
+  
+  <meta name="description" content="需要phpize、php-config,安装方法：yum install -y php-devel
+wget https://github.com/phpredis/phpredis/archive/master.zip
+或https://github.com/phpredis/phpredis/a">
+  
+
+  
+  
+  <meta name="keywords" content="">
+  
+
+  <meta id="viewport" name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, minimum-scale=1, user-scalable=no, minimal-ui">
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-status-bar-style" content="black">
+
+  <meta property="og:title" content="php-redis-install">
+
+  <meta property="og:site_name" content="Zithan">
+
+  
+  <meta property="og:image" content="/favicon.ico">
+  
+
+  <link href="/favicon.ico" rel="icon">
+  <link rel="alternate" href="/atom.xml" title="Zithan" type="application/atom+xml">
+  <link rel="stylesheet" href="/css/style.css" media="screen" type="text/css">
+</head>
+
+
+<body>
+<div class="blog">
+  <div class="content">
+
+    <header>
+  <div class="site-branding">
+    <h1 class="site-title">
+      <a href="/">Zithan</a>
+    </h1>
+    <p class="site-description">for (;;) {学习, 总结, 提炼, 分享}</p>
+  </div>
+  <nav class="site-navigation">
+    <ul>
+      
+        <li><a href="/">主页</a></li>
+      
+        <li><a href="/archives">归档</a></li>
+      
+    </ul>
+  </nav>
+</header>
+
+    <main class="site-main posts-loop">
+    <article>
+
+  
+    
+    <h3 class="article-title"><span>php-redis-install</span></h3>
+    
+  
+
+  <div class="article-top-meta">
+    <span class="posted-on">
+      <a href="/2017/09/30/2017-09-30-php-redis-install/" rel="bookmark">
+        <time class="entry-date published" datetime="2017-09-30T13:06:23.000Z">
+          2017-09-30
+        </time>
+      </a>
+    </span>
+  </div>
+
+
+  
+
+  <div class="article-content">
+    <div class="entry">
+      
+        <ul>
+<li>需要phpize、php-config,安装方法：yum install -y php-devel</li>
+<li>wget <a href="https://github.com/phpredis/phpredis/archive/master.zip" target="_blank" rel="noopener">https://github.com/phpredis/phpredis/archive/master.zip</a></li>
+<li>或<a href="https://github.com/phpredis/phpredis/archive/develop.zip" target="_blank" rel="noopener">https://github.com/phpredis/phpredis/archive/develop.zip</a></li>
+<li>unzip master.zip &amp;&amp; cd <em>**</em></li>
+<li>phpize</li>
+<li>./configure -with-php-config=/usr/bin/php-config</li>
+<li>make</li>
+<li>sudo make install</li>
+<li>cd /*/php.ini(查看php.ini位置用命令：php –ini)</li>
+<li>在Php.ini最后面添加extension=redis.so</li>
+<li>用Php -m 查看PHP安装的扩展模块</li>
+</ul>
+
+      
+    </div>
+
+  </div>
+
+  <div class="article-footer">
+    <div class="article-meta pull-left">
+
+    
+
+    
+
+    </div>
+
+    
+  </div>
+</article>
+
+
+    </main>
+
+    <footer class="site-footer">
+  <p class="site-info">
+    Proudly powered by <a href="https://hexo.io/" target="_blank">Hexo</a> and
+    Theme by <a href="https://github.com/CodeDaraW/Hacker" target="_blank">Hacker</a>
+    <br>
+    
+    &copy; 2019 Zithan
+    
+  </p>
+</footer>
+    
+  </div>
+</div>
+</body>
+</html>

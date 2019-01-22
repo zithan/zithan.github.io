@@ -1,0 +1,255 @@
+<!DOCTYPE HTML>
+<html>
+<head><meta name="generator" content="Hexo 3.8.0">
+  <meta charset="utf-8">
+  
+  <title>vagrant搭建lnmp开发环境 | Zithan | for (;;) {学习, 总结, 提炼, 分享}</title>
+
+  
+  <meta name="author" content="Zithan">
+  
+
+  
+  <meta name="description" content="vagrant基础知识
+首先来认识一下，打开官网(vagrantup.com)，可以看到官方的宣传语：Develepment Environments Made Easy；很好理解，中式英文就是Made Develepment Env To Easy~~~
+
+Vagrant是一种虚拟技术，基于Ruby的，Vagrant是基于Virtualbox的虚拟机来快速搭建开发环境和实现开发环境的迭代。
+
+Vagrant其实就是一个普普通通的装了一个Linux的VirtualBox虚拟机，配置Vagrant团队为之开发的一系列套件，辅助完成诸如系统安装初始化、文件同步、ssh、部署环境升级、功能插件安装等等一些列问题的开发环境部署套件，这样就可以更好的管理你的虚拟机。
+
+既然是虚拟机，那肯定是比较吃肉(内存和硬盘)的！
+
+网上流行的套路就是开发环境使用Vagrant，生产环境使用Docker，但是Vagrant的开发环境到部署环境还是存在差异的；也有开发部署都用Docker的。">
+  
+
+  
+  
+  <meta name="keywords" content="">
+  
+
+  <meta id="viewport" name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, minimum-scale=1, user-scalable=no, minimal-ui">
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-status-bar-style" content="black">
+
+  <meta property="og:title" content="vagrant搭建lnmp开发环境">
+
+  <meta property="og:site_name" content="Zithan">
+
+  
+  <meta property="og:image" content="/favicon.ico">
+  
+
+  <link href="/favicon.ico" rel="icon">
+  <link rel="alternate" href="/atom.xml" title="Zithan" type="application/atom+xml">
+  <link rel="stylesheet" href="/css/style.css" media="screen" type="text/css">
+</head>
+
+
+<body>
+<div class="blog">
+  <div class="content">
+
+    <header>
+  <div class="site-branding">
+    <h1 class="site-title">
+      <a href="/">Zithan</a>
+    </h1>
+    <p class="site-description">for (;;) {学习, 总结, 提炼, 分享}</p>
+  </div>
+  <nav class="site-navigation">
+    <ul>
+      
+        <li><a href="/">主页</a></li>
+      
+        <li><a href="/archives">归档</a></li>
+      
+    </ul>
+  </nav>
+</header>
+
+    <main class="site-main posts-loop">
+    <article>
+
+  
+    
+    <h3 class="article-title"><span>vagrant搭建lnmp开发环境</span></h3>
+    
+  
+
+  <div class="article-top-meta">
+    <span class="posted-on">
+      <a href="/2017/11/01/2017-11-01-vagrant-lnmp/" rel="bookmark">
+        <time class="entry-date published" datetime="2017-11-01T10:30:42.000Z">
+          2017-11-01
+        </time>
+      </a>
+    </span>
+  </div>
+
+
+  
+
+  <div class="article-content">
+    <div class="entry">
+      
+        <h2 id="vagrant基础知识"><a href="#vagrant基础知识" class="headerlink" title="vagrant基础知识"></a>vagrant基础知识</h2><ul>
+<li><p>首先来认识一下，打开官网(vagrantup.com)，可以看到官方的宣传语：Develepment Environments Made Easy；很好理解，中式英文就是Made Develepment Env To Easy~~~</p>
+</li>
+<li><p>Vagrant是一种虚拟技术，基于Ruby的，Vagrant是基于Virtualbox的虚拟机来快速搭建开发环境和实现开发环境的迭代。</p>
+</li>
+<li><p>Vagrant其实就是一个普普通通的装了一个Linux的VirtualBox虚拟机，配置Vagrant团队为之开发的一系列套件，辅助完成诸如系统安装初始化、文件同步、ssh、部署环境升级、功能插件安装等等一些列问题的开发环境部署套件，这样就可以更好的管理你的虚拟机。</p>
+</li>
+<li><p>既然是虚拟机，那肯定是比较吃肉(内存和硬盘)的！</p>
+</li>
+<li><p>网上流行的套路就是开发环境使用Vagrant，生产环境使用Docker，但是Vagrant的开发环境到部署环境还是存在差异的；也有开发部署都用Docker的。</p>
+</li>
+</ul>
+<a id="more"></a>
+<h2 id="vagrant安装"><a href="#vagrant安装" class="headerlink" title="vagrant安装"></a>vagrant安装</h2><ol>
+<li>安装虚拟机VirtualBox</li>
+<li>安装Vagrant</li>
+</ol>
+<h2 id="vagrant常用命令"><a href="#vagrant常用命令" class="headerlink" title="vagrant常用命令"></a>vagrant常用命令</h2><ul>
+<li><p><code>vagrant box add your_box_name box_path</code>：添加box</p>
+</li>
+<li><p><code>vagrant init your_box_name</code>：初始化配置</p>
+</li>
+<li><p><code>vagrant up</code>：启动虚拟机</p>
+</li>
+<li><p><code>vagrant ssh</code>：登录虚拟机</p>
+</li>
+<li><p><code>vagrant suspend</code>：挂起虚拟机</p>
+</li>
+<li><p><code>vagrant resume</code>：唤醒虚拟机</p>
+</li>
+<li><p><code>vagrant reload</code>：重启虚拟机</p>
+</li>
+<li><p><code>vagrant halt</code>：关闭虚拟机</p>
+</li>
+<li><p><code>vagrant status</code>：查看虚拟机状态</p>
+</li>
+<li><p><code>vagrant destroy</code>：删除虚拟机</p>
+</li>
+<li><p><code>vagrant box remove your_box_name</code>：删除box</p>
+</li>
+<li><p><code>vagrant package</code>：打包box</p>
+</li>
+</ul>
+<h2 id="vagrant搭建LNMP开发环境"><a href="#vagrant搭建LNMP开发环境" class="headerlink" title="vagrant搭建LNMP开发环境"></a>vagrant搭建LNMP开发环境</h2><blockquote>
+<p>基于Centos/7.4.1708 + nginx/1.12.2 + mysql/5.7.20 + PHP/5.6.32</p>
+<p>宿主机：macOS</p>
+</blockquote>
+<h3 id="Centos安装"><a href="#Centos安装" class="headerlink" title="Centos安装"></a>Centos安装</h3><ol>
+<li>下载centos的box</li>
+<li><code>vagrant box add your_box_name box_path</code> //添加BOX</li>
+<li><code>vagrant init your_box_name</code> //初始化BOX生成Vagrantfile配置文件</li>
+<li><code>vagrant up</code>  //启动配置文件</li>
+<li><code>vagrant ssh</code> //以ssh方式连接centos系统</li>
+<li>到这里已经初步使用vagrant工具搭建好了一个虚拟机centos系统</li>
+</ol>
+<h3 id="Vagrantfile文件配置"><a href="#Vagrantfile文件配置" class="headerlink" title="Vagrantfile文件配置"></a>Vagrantfile文件配置</h3><p><a href="https://github.com/zithan/" target="_blank" rel="noopener">Vagrantfile Demo</a></p>
+<h3 id="Nginx安装"><a href="#Nginx安装" class="headerlink" title="Nginx安装"></a>Nginx安装</h3><h4 id="Nginx环境的准备"><a href="#Nginx环境的准备" class="headerlink" title="Nginx环境的准备"></a>Nginx环境的准备</h4><ul>
+<li><p>系统要求<br>centos &gt;= 7.* x86_64</p>
+</li>
+<li><p>查看系统版本信息</p>
+<ul>
+<li><code>uname</code></li>
+<li><code>uname -r</code>  </li>
+<li><code>uname -a</code></li>
+<li><code>rpm -q centos-release</code></li>
+<li><code>cat /etc/redhat-release</code></li>
+</ul>
+</li>
+<li><p>硬件要求</p>
+<ul>
+<li>cpus&gt;=2；memory&gt;=512m</li>
+<li><code>ping www.baidu.com</code> #检查网络是否通畅</li>
+<li><code>yum list|grep gcc</code> #检查有没有安装gcc编译器</li>
+</ul>
+</li>
+<li><p>关闭iptables规则</p>
+<ul>
+<li><code>iptables -L</code> #列出表内容</li>
+<li><code>iptables -F</code> #清除所有表的内容</li>
+<li><code>iptables -t nat -L</code> #列出nat表内容</li>
+<li><code>iptables -t nat -F</code> #清除nat表的内容</li>
+</ul>
+<blockquote>
+<p>上面iptables命令，如果是在生产环境不要这样子，要进行合理配置<br>iptables 是一个配置 Linux 内核 防火墙 的命令行工具</p>
+</blockquote>
+</li>
+<li><p>改变selinux模式</p>
+<ul>
+<li><code>getenforce</code> #查看selinux当前模式</li>
+<li><code>setenforce 0</code> #设置为宽容模式</li>
+<li><code>vi /etc/selinux/config</code> #也可以进入文件直接修改SELINUX=enforcing—&gt;调整enforcing|disabled|permissive</li>
+</ul>
+<blockquote>
+<p>SELinux 是 2.6 版本的 Linux 内核中提供的强制访问控制(MAC）系统。</p>
+<p>目前系统文件权限的管理有两种：DAC(传统的) 和 MAC(SELinux)</p>
+<p>目前 SELinux 支持三种模式，分别如下：<br>1、·enforcing：强制模式，代表 SELinux 运作中，且已经正确的开始限制 domain/type 了；<br>2、·permissive：宽容模式：代表 SELinux 运作中，不过仅会有警告讯息并不会实际限制 domain/type 的存取。这种模式可以运来作为 SELinux 的 debug 之用；<br>3、·disabled：关闭，SELinux 并没有实际运作。</p>
+</blockquote>
+</li>
+<li><p>安装相关依赖</p>
+<ul>
+<li><code>yum -y install gcc gcc-c++ autoconf pcre pcre-devel make automake</code></li>
+<li><code>yum -y install wget httpd-tools vim</code></li>
+<li><code>sudo mkdir app backup download logs work</code> #习惯性在~目录下mkdir这5个文件夹</li>
+</ul>
+</li>
+<li><p>安装Nginx</p>
+<ul>
+<li>添加nginx源 #参看官网</li>
+<li><code>yum -y install nginx</code></li>
+<li><code>rpm -ql nginx</code> #查看nginx相关的所有目录</li>
+</ul>
+</li>
+<li><p>Nginx相关操作</p>
+<ul>
+<li>nginx -t #检查nginx配置是否正确</li>
+<li>nginx -t -c #检查nginx指定配置是否正确</li>
+<li>sudo systemctl start nginx.service #启动nginx @centos7</li>
+<li>sudo systemctl restart nginx.service #重启nginx @centos7</li>
+<li>sudo systemctl stop nginx.service #停止nginx @centos7</li>
+<li>sudo nginx -s reload #重启Nginx</li>
+<li>sudo nginx -s stop #关闭nginx</li>
+</ul>
+</li>
+</ul>
+<h3 id="MySQL安装"><a href="#MySQL安装" class="headerlink" title="MySQL安装"></a>MySQL安装</h3><h3 id="PHP安装"><a href="#PHP安装" class="headerlink" title="PHP安装"></a>PHP安装</h3>
+      
+    </div>
+
+  </div>
+
+  <div class="article-footer">
+    <div class="article-meta pull-left">
+
+    
+
+    
+
+    </div>
+
+    
+  </div>
+</article>
+
+
+    </main>
+
+    <footer class="site-footer">
+  <p class="site-info">
+    Proudly powered by <a href="https://hexo.io/" target="_blank">Hexo</a> and
+    Theme by <a href="https://github.com/CodeDaraW/Hacker" target="_blank">Hacker</a>
+    <br>
+    
+    &copy; 2019 Zithan
+    
+  </p>
+</footer>
+    
+  </div>
+</div>
+</body>
+</html>

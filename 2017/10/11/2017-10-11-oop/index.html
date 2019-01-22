@@ -1,0 +1,173 @@
+<!DOCTYPE HTML>
+<html>
+<head><meta name="generator" content="Hexo 3.8.0">
+  <meta charset="utf-8">
+  
+  <title>PHP 面向对象编程 | Zithan | for (;;) {学习, 总结, 提炼, 分享}</title>
+
+  
+  <meta name="author" content="Zithan">
+  
+
+  
+  <meta name="description" content="基础
+public; protected; private
+封装；继承(php单一继承)；多态（抽象类，接口）；
+魔术方法(14)
+常用设计模式
+
+面向对象编程的基本原则SOLID：
+单一职责原则：
+
+简单来说就是一个类只负责一件事，怎么来实现这个，那就要职责的划分，而职责划分的粒度是根据需求粒度的">
+  
+
+  
+  
+  <meta name="keywords" content="">
+  
+
+  <meta id="viewport" name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, minimum-scale=1, user-scalable=no, minimal-ui">
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-status-bar-style" content="black">
+
+  <meta property="og:title" content="PHP 面向对象编程">
+
+  <meta property="og:site_name" content="Zithan">
+
+  
+  <meta property="og:image" content="/favicon.ico">
+  
+
+  <link href="/favicon.ico" rel="icon">
+  <link rel="alternate" href="/atom.xml" title="Zithan" type="application/atom+xml">
+  <link rel="stylesheet" href="/css/style.css" media="screen" type="text/css">
+</head>
+
+
+<body>
+<div class="blog">
+  <div class="content">
+
+    <header>
+  <div class="site-branding">
+    <h1 class="site-title">
+      <a href="/">Zithan</a>
+    </h1>
+    <p class="site-description">for (;;) {学习, 总结, 提炼, 分享}</p>
+  </div>
+  <nav class="site-navigation">
+    <ul>
+      
+        <li><a href="/">主页</a></li>
+      
+        <li><a href="/archives">归档</a></li>
+      
+    </ul>
+  </nav>
+</header>
+
+    <main class="site-main posts-loop">
+    <article>
+
+  
+    
+    <h3 class="article-title"><span>PHP 面向对象编程</span></h3>
+    
+  
+
+  <div class="article-top-meta">
+    <span class="posted-on">
+      <a href="/2017/10/11/2017-10-11-oop/" rel="bookmark">
+        <time class="entry-date published" datetime="2017-10-11T04:17:11.000Z">
+          2017-10-11
+        </time>
+      </a>
+    </span>
+  </div>
+
+
+  
+
+  <div class="article-content">
+    <div class="entry">
+      
+        <h2 id="基础"><a href="#基础" class="headerlink" title="基础"></a>基础</h2><ul>
+<li>public; protected; private</li>
+<li>封装；继承(php单一继承)；多态（抽象类，接口）；</li>
+<li>魔术方法(14)</li>
+<li>常用设计模式</li>
+</ul>
+<h2 id="面向对象编程的基本原则"><a href="#面向对象编程的基本原则" class="headerlink" title="面向对象编程的基本原则"></a>面向对象编程的基本原则</h2><h4 id="SOLID："><a href="#SOLID：" class="headerlink" title="SOLID："></a>SOLID：</h4><ol>
+<li><p>单一职责原则：</p>
+<blockquote>
+<p>简单来说就是一个类只负责一件事，怎么来实现这个，那就要职责的划分，而职责划分的粒度是根据需求粒度的不同而不同的，所以只有合适的设计，没有最好的设计；<br>单一原则是高内聚、低耦合的引申</p>
+</blockquote>
+</li>
+<li><p>开放关闭原则：</p>
+<blockquote>
+<p>对模块修改是关闭的，关闭对模块源代码的修改，对源代码进行修改存在很高的风险。<br>对模块的扩展是开放的，即系模块是以扩展的方式去应对需求的变化，就是面向抽象/接口编程<br>开闭原则提高了代码的复用性和易维护。</p>
+</blockquote>
+</li>
+<li><p>里氏替换原则</p>
+<blockquote>
+<p>定义：任何基类出现的地方，子类一定可以出现。<br>任何一个子类的实例都可以替换父类的实例，而功能不受影响<br>要遵循里氏替换原则， 需要保证子类在实现父类方法时，必须遵循父类的方法，而且不能重写父类已经定义的方法，可以这样理解继承中父类的关系：</p>
+</blockquote>
+</li>
+</ol>
+<ol start="4">
+<li>接口隔离原则</li>
+</ol>
+<blockquote>
+<p>不应该强行要求客户端依赖于它们不用的接口。<br>类之间的依赖应该建立在最小的接口上面。这里的最小取决于单一原则的职责划分粒度。</p>
+</blockquote>
+<ol start="5">
+<li>依赖倒置原则<blockquote>
+<p>高层模块不应该直接依赖于底层模块的具体实现，而应该依赖于底层的抽象。换言之，模块间的依赖是通过抽象发生，实现类之间不发生直接的依赖关系，其依赖关系是通过接口或抽象类产生的。<br>接口和抽象类不应该依赖于实现类，而实现类依赖接口或抽象类。</p>
+</blockquote>
+</li>
+</ol>
+<ul>
+<li>单一职责：一个类，只需要做好一件事情。</li>
+<li>开放封闭：一个类，应该是可扩展的，而不是可修改的。</li>
+<li>依赖倒置：一个类，不应该强依赖另一个类。每个类对于另一个类都是可替换的。</li>
+<li>配置化：尽可能地使用配置，而不是硬编码。</li>
+<li>面向接口编程：只需要关心接口，不需要关心实现。</li>
+</ul>
+
+      
+    </div>
+
+  </div>
+
+  <div class="article-footer">
+    <div class="article-meta pull-left">
+
+    
+
+    
+
+    </div>
+
+    
+  </div>
+</article>
+
+
+    </main>
+
+    <footer class="site-footer">
+  <p class="site-info">
+    Proudly powered by <a href="https://hexo.io/" target="_blank">Hexo</a> and
+    Theme by <a href="https://github.com/CodeDaraW/Hacker" target="_blank">Hacker</a>
+    <br>
+    
+    &copy; 2019 Zithan
+    
+  </p>
+</footer>
+    
+  </div>
+</div>
+</body>
+</html>

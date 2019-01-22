@@ -1,0 +1,140 @@
+<!DOCTYPE HTML>
+<html>
+<head><meta name="generator" content="Hexo 3.8.0">
+  <meta charset="utf-8">
+  
+  <title>mysql-storage-engine | Zithan | for (;;) {学习, 总结, 提炼, 分享}</title>
+
+  
+  <meta name="author" content="Zithan">
+  
+
+  
+  <meta name="description" content="Mysql存储引擎有哪些mysql存储引擎MyISAM和InnoDB的区别
+MyISAM类型不支持事务处理等高级处理，而InnoDB类型支持.
+
+
+MyISAM类型的表强调的是性能，其执行数度比InnoDB类型更快.
+InnoDB不支持FULLTEXT类型的索引.
+InnoDB中不保存表的具体行数，">
+  
+
+  
+  
+  <meta name="keywords" content="">
+  
+
+  <meta id="viewport" name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, minimum-scale=1, user-scalable=no, minimal-ui">
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-status-bar-style" content="black">
+
+  <meta property="og:title" content="mysql-storage-engine">
+
+  <meta property="og:site_name" content="Zithan">
+
+  
+  <meta property="og:image" content="/favicon.ico">
+  
+
+  <link href="/favicon.ico" rel="icon">
+  <link rel="alternate" href="/atom.xml" title="Zithan" type="application/atom+xml">
+  <link rel="stylesheet" href="/css/style.css" media="screen" type="text/css">
+</head>
+
+
+<body>
+<div class="blog">
+  <div class="content">
+
+    <header>
+  <div class="site-branding">
+    <h1 class="site-title">
+      <a href="/">Zithan</a>
+    </h1>
+    <p class="site-description">for (;;) {学习, 总结, 提炼, 分享}</p>
+  </div>
+  <nav class="site-navigation">
+    <ul>
+      
+        <li><a href="/">主页</a></li>
+      
+        <li><a href="/archives">归档</a></li>
+      
+    </ul>
+  </nav>
+</header>
+
+    <main class="site-main posts-loop">
+    <article>
+
+  
+    
+    <h3 class="article-title"><span>mysql-storage-engine</span></h3>
+    
+  
+
+  <div class="article-top-meta">
+    <span class="posted-on">
+      <a href="/2017/10/13/2017-10-13-mysql-storage-engine/" rel="bookmark">
+        <time class="entry-date published" datetime="2017-10-13T07:23:09.000Z">
+          2017-10-13
+        </time>
+      </a>
+    </span>
+  </div>
+
+
+  
+
+  <div class="article-content">
+    <div class="entry">
+      
+        <h2 id="Mysql存储引擎"><a href="#Mysql存储引擎" class="headerlink" title="Mysql存储引擎"></a>Mysql存储引擎</h2><h3 id="有哪些"><a href="#有哪些" class="headerlink" title="有哪些"></a>有哪些</h3><h3 id="mysql存储引擎MyISAM和InnoDB的区别"><a href="#mysql存储引擎MyISAM和InnoDB的区别" class="headerlink" title="mysql存储引擎MyISAM和InnoDB的区别"></a>mysql存储引擎MyISAM和InnoDB的区别</h3><ol>
+<li>MyISAM类型不支持事务处理等高级处理，而InnoDB类型支持.</li>
+</ol>
+<ul>
+<li>MyISAM类型的表强调的是性能，其执行数度比InnoDB类型更快.</li>
+<li>InnoDB不支持FULLTEXT类型的索引.</li>
+<li>InnoDB中不保存表的具体行数，也就是说，执行<code>select count(*) from table</code>时，InnoDB要扫描一遍整个表来计算有多少行，但是MyISAM只要简单的读出保存好的行数即可.</li>
+<li>对于AUTO_INCREMENT类型的字段，InnoDB中必须包含只有该字段的索引，但是在MyISAM表中，可以和其他字段一起建立联合索引。</li>
+<li>DELETE FROM table时，InnoDB不会重新建立表，而是一行一行的删除。</li>
+<li>LOAD TABLE FROM MASTER操作对InnoDB是不起作用的，解决方法是首先把InnoDB表改成MyISAM表，导入数据后再改成InnoDB表，但是对于使用的额外的InnoDB特性(例如外键)的表不适用.</li>
+<li>MyISAM支持表锁，InnoDB支持行锁。</li>
+</ul>
+
+      
+    </div>
+
+  </div>
+
+  <div class="article-footer">
+    <div class="article-meta pull-left">
+
+    
+
+    
+
+    </div>
+
+    
+  </div>
+</article>
+
+
+    </main>
+
+    <footer class="site-footer">
+  <p class="site-info">
+    Proudly powered by <a href="https://hexo.io/" target="_blank">Hexo</a> and
+    Theme by <a href="https://github.com/CodeDaraW/Hacker" target="_blank">Hacker</a>
+    <br>
+    
+    &copy; 2019 Zithan
+    
+  </p>
+</footer>
+    
+  </div>
+</div>
+</body>
+</html>

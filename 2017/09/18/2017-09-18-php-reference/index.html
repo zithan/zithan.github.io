@@ -1,0 +1,165 @@
+<!DOCTYPE HTML>
+<html>
+<head><meta name="generator" content="Hexo 3.8.0">
+  <meta charset="utf-8">
+  
+  <title>php_reference | Zithan | for (;;) {学习, 总结, 提炼, 分享}</title>
+
+  
+  <meta name="author" content="Zithan">
+  
+
+  
+  <meta name="description" content="引用
+是什么：在 PHP 中引用意味着用不同的名字访问同一个变量内容。
+
+
+做什么：PHP 的引用允许用两个变量来指向同一个内容。
+注意在PHP 中，变量名和变量内容是不一样的， 因此同样的内容可以有不同的名字。
+
+引用传递引用返回对象引用取消引用
+当 unset 一个引用，只是断开了变量名和变量内">
+  
+
+  
+  
+  <meta name="keywords" content="">
+  
+
+  <meta id="viewport" name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, minimum-scale=1, user-scalable=no, minimal-ui">
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-status-bar-style" content="black">
+
+  <meta property="og:title" content="php_reference">
+
+  <meta property="og:site_name" content="Zithan">
+
+  
+  <meta property="og:image" content="/favicon.ico">
+  
+
+  <link href="/favicon.ico" rel="icon">
+  <link rel="alternate" href="/atom.xml" title="Zithan" type="application/atom+xml">
+  <link rel="stylesheet" href="/css/style.css" media="screen" type="text/css">
+</head>
+
+
+<body>
+<div class="blog">
+  <div class="content">
+
+    <header>
+  <div class="site-branding">
+    <h1 class="site-title">
+      <a href="/">Zithan</a>
+    </h1>
+    <p class="site-description">for (;;) {学习, 总结, 提炼, 分享}</p>
+  </div>
+  <nav class="site-navigation">
+    <ul>
+      
+        <li><a href="/">主页</a></li>
+      
+        <li><a href="/archives">归档</a></li>
+      
+    </ul>
+  </nav>
+</header>
+
+    <main class="site-main posts-loop">
+    <article>
+
+  
+    
+    <h3 class="article-title"><span>php_reference</span></h3>
+    
+  
+
+  <div class="article-top-meta">
+    <span class="posted-on">
+      <a href="/2017/09/18/2017-09-18-php-reference/" rel="bookmark">
+        <time class="entry-date published" datetime="2017-09-17T16:28:54.000Z">
+          2017-09-18
+        </time>
+      </a>
+    </span>
+  </div>
+
+
+  
+
+  <div class="article-content">
+    <div class="entry">
+      
+        <h1 id="引用"><a href="#引用" class="headerlink" title="引用"></a>引用</h1><blockquote>
+<p>是什么：在 PHP 中引用意味着用不同的名字访问同一个变量内容。</p>
+</blockquote>
+<blockquote>
+<p>做什么：PHP 的引用允许用两个变量来指向同一个内容。</p>
+<p>注意在PHP 中，变量名和变量内容是不一样的， 因此同样的内容可以有不同的名字。</p>
+</blockquote>
+<h3 id="引用传递"><a href="#引用传递" class="headerlink" title="引用传递"></a>引用传递</h3><h3 id="引用返回"><a href="#引用返回" class="headerlink" title="引用返回"></a>引用返回</h3><h3 id="对象引用"><a href="#对象引用" class="headerlink" title="对象引用"></a>对象引用</h3><h3 id="取消引用"><a href="#取消引用" class="headerlink" title="取消引用"></a>取消引用</h3><blockquote>
+<p>当 unset 一个引用，只是断开了变量名和变量内容之间的绑定。这并不意味着变量内容被销毁了</p>
+</blockquote>
+<h3 id="其他引用"><a href="#其他引用" class="headerlink" title="其他引用"></a>其他引用</h3><ul>
+<li>global 引用</li>
+</ul>
+<blockquote>
+<p>当用 global $var 声明一个变量时实际上建立了一个到全局变量的引用。也就是说和这样做是相同的：</p>
+<p>&lt;?php<br>$var =&amp; $GLOBALS[“var”];<br>?&gt;<br>这意味着，例如，unset $var 不会 unset 全局变量。</p>
+</blockquote>
+<ul>
+<li>$this 引用</li>
+</ul>
+<blockquote>
+<p>在一个对象的方法中，$this 永远是调用它的对象的引用。</p>
+</blockquote>
+<hr>
+<blockquote>
+<p>引申知识</p>
+</blockquote>
+<ul>
+<li>memory-get-usage();</li>
+<li>zval:变量容器</li>
+<li>xdebug-debug-zval();</li>
+<li>COW</li>
+<li>clone</li>
+<li>画图分析法</li>
+</ul>
+
+      
+    </div>
+
+  </div>
+
+  <div class="article-footer">
+    <div class="article-meta pull-left">
+
+    
+
+    
+
+    </div>
+
+    
+  </div>
+</article>
+
+
+    </main>
+
+    <footer class="site-footer">
+  <p class="site-info">
+    Proudly powered by <a href="https://hexo.io/" target="_blank">Hexo</a> and
+    Theme by <a href="https://github.com/CodeDaraW/Hacker" target="_blank">Hacker</a>
+    <br>
+    
+    &copy; 2019 Zithan
+    
+  </p>
+</footer>
+    
+  </div>
+</div>
+</body>
+</html>

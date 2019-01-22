@@ -1,0 +1,154 @@
+<!DOCTYPE HTML>
+<html>
+<head><meta name="generator" content="Hexo 3.8.0">
+  <meta charset="utf-8">
+  
+  <title>会话控制技术 | Zithan | for (;;) {学习, 总结, 提炼, 分享}</title>
+
+  
+  <meta name="author" content="Zithan">
+  
+
+  
+  <meta name="description" content="Cookie操作
+写操作：setcookie();读操作：```  只读12345678910&amp;gt; 删除操作：setcookie()的expire过期时间time()-1000#### Cookie优缺点保存在客户端---## session- session_start
+
+$_SESSION;">
+  
+
+  
+  
+  <meta name="keywords" content="php cookie session">
+  
+
+  <meta id="viewport" name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, minimum-scale=1, user-scalable=no, minimal-ui">
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-status-bar-style" content="black">
+
+  <meta property="og:title" content="会话控制技术">
+
+  <meta property="og:site_name" content="Zithan">
+
+  
+  <meta property="og:image" content="/favicon.ico">
+  
+
+  <link href="/favicon.ico" rel="icon">
+  <link rel="alternate" href="/atom.xml" title="Zithan" type="application/atom+xml">
+  <link rel="stylesheet" href="/css/style.css" media="screen" type="text/css">
+</head>
+
+
+<body>
+<div class="blog">
+  <div class="content">
+
+    <header>
+  <div class="site-branding">
+    <h1 class="site-title">
+      <a href="/">Zithan</a>
+    </h1>
+    <p class="site-description">for (;;) {学习, 总结, 提炼, 分享}</p>
+  </div>
+  <nav class="site-navigation">
+    <ul>
+      
+        <li><a href="/">主页</a></li>
+      
+        <li><a href="/archives">归档</a></li>
+      
+    </ul>
+  </nav>
+</header>
+
+    <main class="site-main posts-loop">
+    <article>
+
+  
+    
+    <h3 class="article-title"><span>会话控制技术</span></h3>
+    
+  
+
+  <div class="article-top-meta">
+    <span class="posted-on">
+      <a href="/2017/10/12/2017-10-12-cookie-session/" rel="bookmark">
+        <time class="entry-date published" datetime="2017-10-12T01:32:00.000Z">
+          2017-10-12
+        </time>
+      </a>
+    </span>
+  </div>
+
+
+  
+
+  <div class="article-content">
+    <div class="entry">
+      
+        <h2 id="Cookie"><a href="#Cookie" class="headerlink" title="Cookie"></a>Cookie</h2><h4 id="操作"><a href="#操作" class="headerlink" title="操作"></a>操作</h4><blockquote>
+<p>写操作：setcookie();<br>读操作：<figure class="highlight plain"><figcaption><span>```  只读</span></figcaption><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line">&gt; 删除操作：setcookie()的expire过期时间time()-1000</span><br><span class="line"></span><br><span class="line">#### Cookie优缺点</span><br><span class="line">保存在客户端</span><br><span class="line"></span><br><span class="line">---</span><br><span class="line"></span><br><span class="line">## session</span><br><span class="line"></span><br><span class="line">- session_start</span><br></pre></td></tr></table></figure></p>
+</blockquote>
+<p>$_SESSION;<br>$_SESSION = [];<br>session_destroy()<br><code>`</code></p>
+<h3 id="session-配置"><a href="#session-配置" class="headerlink" title="session 配置"></a>session 配置</h3><ul>
+<li><p>php.ini<br>session.auto_start<br>sesson.cookie_domain<br>session.cookie_lifetime<br>session.cookie_path<br>session.name默认PHPSESSIONID<br>eg. $aaaa= session.name() = session.id();<br>SID = $aaa; 如果开启了cookie，SID为空，反之<br>session.save_path<br>session.use_cookies<br>session.use_trans_sid</p>
+</li>
+<li><p>session.gc_probability = 1<br>session.gc_divisor = 100<br>session.gc_maxlifetime = 1440</p>
+</li>
+<li><p>session.save_handler   eg.redis;mc;mysql;</p>
+</li>
+<li>session_set_save_handler();<br>zithan++ LVS</li>
+</ul>
+<h2 id="session优缺点"><a href="#session优缺点" class="headerlink" title="session优缺点"></a>session优缺点</h2><p>保存在服务器<br>服务器存储越来越大</p>
+<hr>
+<h2 id="cookie和session的区别"><a href="#cookie和session的区别" class="headerlink" title="cookie和session的区别"></a>cookie和session的区别</h2><ol>
+<li>储存角度：cookie保存在客户端的内存(会话cookie)和硬盘(持久cookie)，而session保存在服务器的内存、文件(默认)、数据库；</li>
+</ol>
+<ul>
+<li>安全角度：session虽然对客户不可见，但是必须依赖cookie保存sessionID或者url传参数，所以session和cookie本质上一样</li>
+<li>保存内容的类型和大小：cookie只能保存字符串类型以及可以自动转换成字符串的类型，大小有限制；session可以保存其他类型，理论上大小无限制。</li>
+</ul>
+
+      
+    </div>
+
+  </div>
+
+  <div class="article-footer">
+    <div class="article-meta pull-left">
+
+    
+
+    
+    
+
+    <span class="post-tags">
+      <i class="icon-tags"></i>
+        <a href="/tags/php-cookie-session/">php cookie session</a>
+    </span>
+    
+
+    </div>
+
+    
+  </div>
+</article>
+
+
+    </main>
+
+    <footer class="site-footer">
+  <p class="site-info">
+    Proudly powered by <a href="https://hexo.io/" target="_blank">Hexo</a> and
+    Theme by <a href="https://github.com/CodeDaraW/Hacker" target="_blank">Hacker</a>
+    <br>
+    
+    &copy; 2019 Zithan
+    
+  </p>
+</footer>
+    
+  </div>
+</div>
+</body>
+</html>

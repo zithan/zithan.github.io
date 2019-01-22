@@ -1,0 +1,152 @@
+<!DOCTYPE HTML>
+<html>
+<head><meta name="generator" content="Hexo 3.8.0">
+  <meta charset="utf-8">
+  
+  <title>php流程控制 | Zithan | for (;;) {学习, 总结, 提炼, 分享}</title>
+
+  
+  <meta name="author" content="Zithan">
+  
+
+  
+  <meta name="description" content="php的遍历数据的三种方式以及区别
+for
+foreach
+while、list()、each()组合循环
+
+
+for循环只能遍历索引数组，foreach可以遍历索引数组和关联数组，联合循环也可以遍历索引数组和关联数组组合循环不会reset()—指针foeach遍历会对数组进行reset()的操作
+">
+  
+
+  
+  
+  <meta name="keywords" content="">
+  
+
+  <meta id="viewport" name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, minimum-scale=1, user-scalable=no, minimal-ui">
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-status-bar-style" content="black">
+
+  <meta property="og:title" content="php流程控制">
+
+  <meta property="og:site_name" content="Zithan">
+
+  
+  <meta property="og:image" content="/favicon.ico">
+  
+
+  <link href="/favicon.ico" rel="icon">
+  <link rel="alternate" href="/atom.xml" title="Zithan" type="application/atom+xml">
+  <link rel="stylesheet" href="/css/style.css" media="screen" type="text/css">
+</head>
+
+
+<body>
+<div class="blog">
+  <div class="content">
+
+    <header>
+  <div class="site-branding">
+    <h1 class="site-title">
+      <a href="/">Zithan</a>
+    </h1>
+    <p class="site-description">for (;;) {学习, 总结, 提炼, 分享}</p>
+  </div>
+  <nav class="site-navigation">
+    <ul>
+      
+        <li><a href="/">主页</a></li>
+      
+        <li><a href="/archives">归档</a></li>
+      
+    </ul>
+  </nav>
+</header>
+
+    <main class="site-main posts-loop">
+    <article>
+
+  
+    
+    <h3 class="article-title"><span>php流程控制</span></h3>
+    
+  
+
+  <div class="article-top-meta">
+    <span class="posted-on">
+      <a href="/2017/10/15/2017-10-15-php-flow/" rel="bookmark">
+        <time class="entry-date published" datetime="2017-10-15T12:57:50.000Z">
+          2017-10-15
+        </time>
+      </a>
+    </span>
+  </div>
+
+
+  
+
+  <div class="article-content">
+    <div class="entry">
+      
+        <h3 id="php的遍历数据的三种方式以及区别"><a href="#php的遍历数据的三种方式以及区别" class="headerlink" title="php的遍历数据的三种方式以及区别"></a>php的遍历数据的三种方式以及区别</h3><ul>
+<li>for</li>
+<li>foreach</li>
+<li>while、list()、each()组合循环</li>
+</ul>
+<blockquote>
+<p>for循环只能遍历索引数组，foreach可以遍历索引数组和关联数组，联合循环也可以遍历索引数组和关联数组<br>组合循环不会reset()—指针<br>foeach遍历会对数组进行reset()的操作</p>
+</blockquote>
+<hr>
+<h3 id="if……elseif"><a href="#if……elseif" class="headerlink" title="if……elseif"></a>if……elseif</h3><ul>
+<li>只有一个满足条件</li>
+<li>优化：把可能性比较大的放在前面，条件多使用switch</li>
+</ul>
+<h3 id="switch…case…"><a href="#switch…case…" class="headerlink" title="switch…case…"></a>switch…case…</h3><ul>
+<li><p>和if不同，switch后面的控制表达式的数据类型只能为整形、浮点、字符串。</p>
+</li>
+<li><p><strong>continue2</strong>跳出两成表</p>
+</li>
+<li><p>生成索引表跳转</p>
+</li>
+<li><p>多条件下，效率高</p>
+</li>
+</ul>
+
+      
+    </div>
+
+  </div>
+
+  <div class="article-footer">
+    <div class="article-meta pull-left">
+
+    
+
+    
+
+    </div>
+
+    
+  </div>
+</article>
+
+
+    </main>
+
+    <footer class="site-footer">
+  <p class="site-info">
+    Proudly powered by <a href="https://hexo.io/" target="_blank">Hexo</a> and
+    Theme by <a href="https://github.com/CodeDaraW/Hacker" target="_blank">Hacker</a>
+    <br>
+    
+    &copy; 2019 Zithan
+    
+  </p>
+</footer>
+    
+  </div>
+</div>
+</body>
+</html>

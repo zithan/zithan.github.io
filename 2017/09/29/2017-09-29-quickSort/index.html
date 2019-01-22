@@ -1,0 +1,123 @@
+<!DOCTYPE HTML>
+<html>
+<head><meta name="generator" content="Hexo 3.8.0">
+  <meta charset="utf-8">
+  
+  <title>快速排序--PHP | Zithan | for (;;) {学习, 总结, 提炼, 分享}</title>
+
+  
+  <meta name="author" content="Zithan">
+  
+
+  
+  <meta name="description" content="123456789101112131415161718192021222324252627&amp;lt;?php// 快速排序//（1）在数据集之中，选择一个元素作为&#34;基准&#34;（pivot）。//（2）所有小于&#34;基准&#34;的元素，都移到&#34;基准&#34;的左边；所有大于&#34;基准&#34;的元素，都移到&#34;基准&#34;的右边。//（3）对&#34;">
+  
+
+  
+  
+  <meta name="keywords" content="">
+  
+
+  <meta id="viewport" name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, minimum-scale=1, user-scalable=no, minimal-ui">
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-status-bar-style" content="black">
+
+  <meta property="og:title" content="快速排序--PHP">
+
+  <meta property="og:site_name" content="Zithan">
+
+  
+  <meta property="og:image" content="/favicon.ico">
+  
+
+  <link href="/favicon.ico" rel="icon">
+  <link rel="alternate" href="/atom.xml" title="Zithan" type="application/atom+xml">
+  <link rel="stylesheet" href="/css/style.css" media="screen" type="text/css">
+</head>
+
+
+<body>
+<div class="blog">
+  <div class="content">
+
+    <header>
+  <div class="site-branding">
+    <h1 class="site-title">
+      <a href="/">Zithan</a>
+    </h1>
+    <p class="site-description">for (;;) {学习, 总结, 提炼, 分享}</p>
+  </div>
+  <nav class="site-navigation">
+    <ul>
+      
+        <li><a href="/">主页</a></li>
+      
+        <li><a href="/archives">归档</a></li>
+      
+    </ul>
+  </nav>
+</header>
+
+    <main class="site-main posts-loop">
+    <article>
+
+  
+    
+    <h3 class="article-title"><span>快速排序--PHP</span></h3>
+    
+  
+
+  <div class="article-top-meta">
+    <span class="posted-on">
+      <a href="/2017/09/29/2017-09-29-quickSort/" rel="bookmark">
+        <time class="entry-date published" datetime="2017-09-29T02:54:31.000Z">
+          2017-09-29
+        </time>
+      </a>
+    </span>
+  </div>
+
+
+  
+
+  <div class="article-content">
+    <div class="entry">
+      
+        <figure class="highlight php"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">&lt;?php</span></span><br><span class="line"><span class="comment">// 快速排序</span></span><br><span class="line"><span class="comment">//（1）在数据集之中，选择一个元素作为"基准"（pivot）。</span></span><br><span class="line"><span class="comment">//（2）所有小于"基准"的元素，都移到"基准"的左边；所有大于"基准"的元素，都移到"基准"的右边。</span></span><br><span class="line"><span class="comment">//（3）对"基准"左边和右边的两个子集，不断重复第一步和第二步，直到所有子集只剩下一个元素为止。</span></span><br><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">quickSort</span><span class="params">(array $items)</span> </span>&#123;</span><br><span class="line">    $count = count($items);</span><br><span class="line">    <span class="keyword">if</span> ($count &lt; <span class="number">2</span>) <span class="keyword">return</span> $items;</span><br><span class="line"></span><br><span class="line">    $pivot = $items[<span class="number">0</span>];</span><br><span class="line">    <span class="keyword">unset</span>($items[<span class="number">0</span>]);</span><br><span class="line">    $left = <span class="keyword">array</span>();</span><br><span class="line">    $right = <span class="keyword">array</span>();</span><br><span class="line">    <span class="keyword">foreach</span> ($items <span class="keyword">as</span> $item) &#123;</span><br><span class="line">        <span class="keyword">if</span> ($item &lt;= $pivot) &#123;</span><br><span class="line">            array_push($left, $item);</span><br><span class="line">        &#125; <span class="keyword">else</span> &#123;</span><br><span class="line">            array_push($right, $item);</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="keyword">return</span> array_merge(quickSort($left), <span class="keyword">array</span>($pivot), quickSort($right));</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">$testItem = <span class="keyword">array</span>(<span class="number">3</span>, <span class="number">8</span>, <span class="number">1</span>, <span class="number">5</span>, <span class="number">9</span>, <span class="number">3</span>, <span class="number">7</span>, <span class="number">2</span>, <span class="number">6</span>, <span class="number">22</span>, <span class="number">-1</span>, <span class="number">12313</span>, <span class="number">444</span>, <span class="number">55</span>, <span class="number">3233</span>);</span><br><span class="line">$return = quickSort($testItem);</span><br><span class="line">var_dump($return);</span><br></pre></td></tr></table></figure>
+
+      
+    </div>
+
+  </div>
+
+  <div class="article-footer">
+    <div class="article-meta pull-left">
+
+    
+
+    
+
+    </div>
+
+    
+  </div>
+</article>
+
+
+    </main>
+
+    <footer class="site-footer">
+  <p class="site-info">
+    Proudly powered by <a href="https://hexo.io/" target="_blank">Hexo</a> and
+    Theme by <a href="https://github.com/CodeDaraW/Hacker" target="_blank">Hacker</a>
+    <br>
+    
+    &copy; 2019 Zithan
+    
+  </p>
+</footer>
+    
+  </div>
+</div>
+</body>
+</html>
